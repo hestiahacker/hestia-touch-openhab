@@ -1,132 +1,8 @@
 {
-  "mqtt:topic:mosquitto:system": {
+  "exec:command:5a54c0be": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
-      "label": "System Information",
-      "bridgeUID": {
-        "segments": [
-          "mqtt",
-          "broker",
-          "mosquitto"
-        ]
-      },
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "system",
-              "cputemp"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "System CPU Temperature",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/cputemp",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "system",
-              "cpuload"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "System CPU Load",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/cpuload",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "system",
-              "space"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "System Used Space",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/useddisk",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {}
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "mqtt",
-          "topic",
-          "mosquitto",
-          "system"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "mqtt",
-          "topic"
-        ]
-      },
-      "location": "System"
-    }
-  },
-  "exec:command:getwifiinfo": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "WiFi Info",
+      "label": "Command pin23 on",
       "channels": [
         {
           "acceptedItemType": "String",
@@ -135,7 +11,7 @@
             "segments": [
               "exec",
               "command",
-              "getwifiinfo",
+              "5a54c0be",
               "output"
             ]
           },
@@ -160,7 +36,7 @@
             "segments": [
               "exec",
               "command",
-              "getwifiinfo",
+              "5a54c0be",
               "input"
             ]
           },
@@ -185,7 +61,7 @@
             "segments": [
               "exec",
               "command",
-              "getwifiinfo",
+              "5a54c0be",
               "exit"
             ]
           },
@@ -210,7 +86,7 @@
             "segments": [
               "exec",
               "command",
-              "getwifiinfo",
+              "5a54c0be",
               "run"
             ]
           },
@@ -235,7 +111,7 @@
             "segments": [
               "exec",
               "command",
-              "getwifiinfo",
+              "5a54c0be",
               "lastexecution"
             ]
           },
@@ -257,10 +133,10 @@
       "configuration": {
         "properties": {
           "transform": "REGEX((.*))",
-          "interval": 600,
-          "autorun": false,
-          "command": "/home/pi/scripts/getwifiinfo.sh",
-          "timeout": 60
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin23_on.sh",
+          "timeout": 1
         }
       },
       "properties": {},
@@ -268,7 +144,7 @@
         "segments": [
           "exec",
           "command",
-          "getwifiinfo"
+          "5a54c0be"
         ]
       },
       "thingTypeUID": {
@@ -276,165 +152,7 @@
           "exec",
           "command"
         ]
-      },
-      "location": "Network"
-    }
-  },
-  "exec:command:pressure": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Barometric Pressure",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "pressure",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "pressure",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "pressure",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "pressure",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "pressure",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 60,
-          "autorun": false,
-          "command": "/home/pi/scripts/getBMEpress.sh",
-          "timeout": 5
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "pressure"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Sensors"
+      }
     }
   },
   "exec:command:getwlanmac": {
@@ -592,163 +310,6 @@
         ]
       },
       "location": "Network"
-    }
-  },
-  "exec:command:f2c": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "F to C Temp Unit",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "f2c",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "f2c",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "f2c",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "f2c",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "f2c",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 0,
-          "autorun": false,
-          "command": "/home/pi/scripts/F2C.sh",
-          "timeout": 15
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "f2c"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Settings"
     }
   },
   "mqtt:topic:mosquitto:humidty": {
@@ -1032,505 +593,6 @@
         "segments": [
           "exec",
           "command"
-        ]
-      },
-      "location": "Settings"
-    }
-  },
-  "exec:command:getbackuptimestampcommand": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Get Backup Timestamp",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getbackuptimestampcommand",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getbackuptimestampcommand",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getbackuptimestampcommand",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getbackuptimestampcommand",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getbackuptimestampcommand",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 0,
-          "autorun": false,
-          "command": "/home/pi/scripts/getbackuptimestamp.sh",
-          "timeout": 150
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "getbackuptimestampcommand"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Maintenance"
-    }
-  },
-  "exec:command:shutdowncommand": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Shutdown",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "shutdowncommand",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "shutdowncommand",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "shutdowncommand",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "shutdowncommand",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "shutdowncommand",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 0,
-          "autorun": false,
-          "command": "/home/pi/scripts/shutdown.sh",
-          "timeout": 60
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "shutdowncommand"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Maintenance"
-    }
-  },
-  "mqtt:topic:mosquitto:types": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "System Configs",
-      "bridgeUID": {
-        "segments": [
-          "mqtt",
-          "broker",
-          "mosquitto"
-        ]
-      },
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "types",
-              "systype"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "System Type",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/systemtype",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "types",
-              "tempunit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "Temp Unit",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/tempunit",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {}
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "mqtt",
-          "topic",
-          "mosquitto",
-          "types"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "mqtt",
-          "topic"
-        ]
-      },
-      "location": "Settings"
-    }
-  },
-  "mqtt:broker:mosquitto": {
-    "class": "org.eclipse.smarthome.core.thing.internal.BridgeImpl",
-    "value": {
-      "label": "Mosquitto MQTT Broker",
-      "channels": [
-        {
-          "kind": "TRIGGER",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "broker",
-              "mosquitto",
-              "externaltemp"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "publishTrigger"
-            ]
-          },
-          "label": "External Temperature",
-          "configuration": {
-            "properties": {
-              "stateTopic": "hestia/external/+/temperature",
-              "separator": "#"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "kind": "TRIGGER",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "broker",
-              "mosquitto",
-              "externalhumi"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "publishTrigger"
-            ]
-          },
-          "label": "External Humidity",
-          "configuration": {
-            "properties": {
-              "stateTopic": "hestia/external/+/humidity",
-              "separator": "#"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "lwtQos": 0,
-          "publickeypin": true,
-          "clientID": "mosquitto",
-          "retainMessages": true,
-          "keepAlive": 60,
-          "secure": false,
-          "certificatepin": true,
-          "qos": 0,
-          "reconnectTime": 60000,
-          "port": 1883,
-          "host": "localhost",
-          "lwtRetain": true
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "mqtt",
-          "broker",
-          "mosquitto"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "mqtt",
-          "broker"
         ]
       },
       "location": "Settings"
@@ -1850,292 +912,6 @@
       "location": "Settings"
     }
   },
-  "exec:command:upgrade": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Upgrade",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "upgrade",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "upgrade",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "upgrade",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "upgrade",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "upgrade",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 0,
-          "autorun": false,
-          "command": "/home/pi/scripts/updateone.sh",
-          "timeout": 15
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "upgrade"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "System"
-    }
-  },
-  "mqtt:topic:mosquitto:cooling": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Cooling Controls and Settings",
-      "bridgeUID": {
-        "segments": [
-          "mqtt",
-          "broker",
-          "mosquitto"
-        ]
-      },
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "cooling",
-              "mode"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "Cooling Mode",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/cmnd/coolingmode",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s",
-              "stateTopic": "hestia/local/stat/coolingmode"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "cooling",
-              "control"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "switch"
-            ]
-          },
-          "label": "Cooling Switch",
-          "configuration": {
-            "properties": {
-              "retained": false,
-              "postCommand": false,
-              "formatBeforePublish": "%s",
-              "commandTopic": "hestia/local/cmnd/coolingstate/POWER",
-              "stateTopic": "hestia/local/stat/coolingstate/power",
-              "off": "OFF",
-              "on": "ON"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "cooling",
-              "boost"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "number"
-            ]
-          },
-          "label": "Cooling Boost Time",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/coolingboostremtime",
-              "retained": false,
-              "postCommand": false,
-              "step": 1.0,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {}
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "mqtt",
-          "topic",
-          "mosquitto",
-          "cooling"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "mqtt",
-          "topic"
-        ]
-      },
-      "location": "Controls"
-    }
-  },
   "mqtt:topic:mosquitto:hotwater": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -2263,477 +1039,6 @@
         ]
       },
       "location": "Controls"
-    }
-  },
-  "exec:command:backupcommand": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Backup",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "backupcommand",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "backupcommand",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "backupcommand",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "backupcommand",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "backupcommand",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 0,
-          "autorun": false,
-          "command": "/home/pi/scripts/backup.sh",
-          "timeout": 120
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "backupcommand"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Maintenance"
-    }
-  },
-  "exec:command:gettempunit": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Temperature Unit",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gettempunit",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gettempunit",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gettempunit",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gettempunit",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gettempunit",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "autorun": false,
-          "interval": 600,
-          "command": "/home/pi/scripts/gettempunit.sh",
-          "timeout": 60
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "gettempunit"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Settings"
-    }
-  },
-  "exec:command:getwlanip": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "WLAN IP",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getwlanip",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getwlanip",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getwlanip",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getwlanip",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getwlanip",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 600,
-          "autorun": false,
-          "command": "/home/pi/scripts/getwlan0ip.sh",
-          "timeout": 60
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "getwlanip"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Network"
     }
   },
   "exec:command:getssid": {
@@ -2891,163 +1196,6 @@
         ]
       },
       "location": "Network"
-    }
-  },
-  "exec:command:gitinstalled": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Git Installed Version",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitinstalled",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitinstalled",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitinstalled",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitinstalled",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitinstalled",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 0,
-          "autorun": false,
-          "command": "/home/pi/scripts/getgitinstalledversion.sh",
-          "timeout": 15
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "gitinstalled"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "System"
     }
   },
   "exec:command:rebootcommand": {
@@ -3364,163 +1512,6 @@
       "location": "System"
     }
   },
-  "exec:command:gitlatest": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Git Latest Version",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitlatest",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitlatest",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitlatest",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitlatest",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "gitlatest",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 604800,
-          "autorun": false,
-          "command": "sudo /home/pi/scripts/getgitlatestversion.sh",
-          "timeout": 15
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "gitlatest"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "System"
-    }
-  },
   "exec:command:c2f": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -3678,10 +1669,10 @@
       "location": "Settings"
     }
   },
-  "exec:command:gettz": {
+  "exec:command:e264ceac": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
-      "label": "Get Time Zone",
+      "label": "Command pin12 on",
       "channels": [
         {
           "acceptedItemType": "String",
@@ -3690,7 +1681,7 @@
             "segments": [
               "exec",
               "command",
-              "gettz",
+              "e264ceac",
               "output"
             ]
           },
@@ -3715,7 +1706,7 @@
             "segments": [
               "exec",
               "command",
-              "gettz",
+              "e264ceac",
               "input"
             ]
           },
@@ -3740,7 +1731,7 @@
             "segments": [
               "exec",
               "command",
-              "gettz",
+              "e264ceac",
               "exit"
             ]
           },
@@ -3765,7 +1756,7 @@
             "segments": [
               "exec",
               "command",
-              "gettz",
+              "e264ceac",
               "run"
             ]
           },
@@ -3790,7 +1781,7 @@
             "segments": [
               "exec",
               "command",
-              "gettz",
+              "e264ceac",
               "lastexecution"
             ]
           },
@@ -3812,167 +1803,10 @@
       "configuration": {
         "properties": {
           "transform": "REGEX((.*))",
-          "interval": 3600,
-          "autorun": true,
-          "command": "/home/pi/scripts/gettz.sh",
-          "timeout": 60
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "gettz"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Settings"
-    }
-  },
-  "exec:command:setsystemtype": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Set SystemType",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "setsystemtype",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "setsystemtype",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "setsystemtype",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "setsystemtype",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "setsystemtype",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "autorun": true,
           "interval": 0,
-          "command": "echo \"%2$s\" \u003e /home/pi/scripts/systemtype",
-          "timeout": 15
+          "autorun": true,
+          "command": "/home/pi/scripts/pin12_on.sh",
+          "timeout": 1
         }
       },
       "properties": {},
@@ -3980,7 +1814,7 @@
         "segments": [
           "exec",
           "command",
-          "setsystemtype"
+          "e264ceac"
         ]
       },
       "thingTypeUID": {
@@ -3988,8 +1822,7 @@
           "exec",
           "command"
         ]
-      },
-      "location": "Settings"
+      }
     }
   },
   "exec:command:gethumi": {
@@ -4149,163 +1982,6 @@
       "location": "Sensors"
     }
   },
-  "exec:command:getcpuload": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "CPU Load",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getcpuload",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getcpuload",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getcpuload",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getcpuload",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getcpuload",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 300,
-          "autorun": true,
-          "command": "/home/pi/scripts/getcpuload.sh",
-          "timeout": 60
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "getcpuload"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "System"
-    }
-  },
   "exec:command:getcputemperature": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -4461,163 +2137,6 @@
         ]
       },
       "location": "System"
-    }
-  },
-  "exec:command:getsystemtype": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Get System Type",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getsystemtype",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getsystemtype",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getsystemtype",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getsystemtype",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getsystemtype",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 600,
-          "autorun": false,
-          "command": "/home/pi/scripts/getsystemtype.sh",
-          "timeout": 60
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "getsystemtype"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Settings"
     }
   },
   "exec:command:gethumiditymode": {
@@ -5232,6 +2751,3580 @@
       "location": "Controls"
     }
   },
+  "exec:command:de3288c7": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Command pin23 off",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "de3288c7",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "de3288c7",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "de3288c7",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "de3288c7",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "de3288c7",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin23_off.sh",
+          "timeout": 1
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "de3288c7"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
+    }
+  },
+  "exec:command:getpublicip": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Public IP",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getpublicip",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getpublicip",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getpublicip",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getpublicip",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getpublicip",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 600,
+          "autorun": false,
+          "command": "/home/pi/scripts/getpublicip.sh",
+          "timeout": 60
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "getpublicip"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Network"
+    }
+  },
+  "mqtt:topic:mosquitto:system": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "System Information",
+      "bridgeUID": {
+        "segments": [
+          "mqtt",
+          "broker",
+          "mosquitto"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "system",
+              "cputemp"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "System CPU Temperature",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/cputemp",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "system",
+              "cpuload"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "System CPU Load",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/cpuload",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "system",
+              "space"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "System Used Space",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/useddisk",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {}
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "system"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "mqtt",
+          "topic"
+        ]
+      },
+      "location": "System"
+    }
+  },
+  "exec:command:getwifiinfo": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "WiFi Info",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwifiinfo",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwifiinfo",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwifiinfo",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwifiinfo",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwifiinfo",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 600,
+          "autorun": false,
+          "command": "/home/pi/scripts/getwifiinfo.sh",
+          "timeout": 60
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "getwifiinfo"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Network"
+    }
+  },
+  "exec:command:pressure": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Barometric Pressure",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "pressure",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "pressure",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "pressure",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "pressure",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "pressure",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 60,
+          "autorun": false,
+          "command": "/home/pi/scripts/getBMEpress.sh",
+          "timeout": 5
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "pressure"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Sensors"
+    }
+  },
+  "exec:command:f2c": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "F to C Temp Unit",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "f2c",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "f2c",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "f2c",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "f2c",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "f2c",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": false,
+          "command": "/home/pi/scripts/F2C.sh",
+          "timeout": 15
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "f2c"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Settings"
+    }
+  },
+  "exec:command:cdd050a4": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Command pin18 on",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "cdd050a4",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "cdd050a4",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "cdd050a4",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "cdd050a4",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "cdd050a4",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin18_on.sh",
+          "timeout": 1
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "cdd050a4"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
+    }
+  },
+  "exec:command:getbackuptimestampcommand": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Get Backup Timestamp",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getbackuptimestampcommand",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getbackuptimestampcommand",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getbackuptimestampcommand",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getbackuptimestampcommand",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getbackuptimestampcommand",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": false,
+          "command": "/home/pi/scripts/getbackuptimestamp.sh",
+          "timeout": 150
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "getbackuptimestampcommand"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Maintenance"
+    }
+  },
+  "exec:command:shutdowncommand": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Shutdown",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "shutdowncommand",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "shutdowncommand",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "shutdowncommand",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "shutdowncommand",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "shutdowncommand",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": false,
+          "command": "/home/pi/scripts/shutdown.sh",
+          "timeout": 60
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "shutdowncommand"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Maintenance"
+    }
+  },
+  "mqtt:topic:mosquitto:types": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "System Configs",
+      "bridgeUID": {
+        "segments": [
+          "mqtt",
+          "broker",
+          "mosquitto"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "types",
+              "systype"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "System Type",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/systemtype",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "types",
+              "tempunit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "Temp Unit",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/tempunit",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {}
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "types"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "mqtt",
+          "topic"
+        ]
+      },
+      "location": "Settings"
+    }
+  },
+  "mqtt:broker:mosquitto": {
+    "class": "org.eclipse.smarthome.core.thing.internal.BridgeImpl",
+    "value": {
+      "label": "Mosquitto MQTT Broker",
+      "channels": [
+        {
+          "kind": "TRIGGER",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "broker",
+              "mosquitto",
+              "externaltemp"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "publishTrigger"
+            ]
+          },
+          "label": "External Temperature",
+          "configuration": {
+            "properties": {
+              "stateTopic": "hestia/external/+/temperature",
+              "separator": "#"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "kind": "TRIGGER",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "broker",
+              "mosquitto",
+              "externalhumi"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "publishTrigger"
+            ]
+          },
+          "label": "External Humidity",
+          "configuration": {
+            "properties": {
+              "stateTopic": "hestia/external/+/humidity",
+              "separator": "#"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "lwtQos": 0,
+          "publickeypin": true,
+          "clientID": "mosquitto",
+          "retainMessages": true,
+          "keepAlive": 60,
+          "secure": false,
+          "certificatepin": true,
+          "qos": 0,
+          "reconnectTime": 60000,
+          "port": 1883,
+          "host": "localhost",
+          "lwtRetain": true
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "mqtt",
+          "broker",
+          "mosquitto"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "mqtt",
+          "broker"
+        ]
+      },
+      "location": "Settings"
+    }
+  },
+  "exec:command:upgrade": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Upgrade",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "upgrade",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "upgrade",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "upgrade",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "upgrade",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "upgrade",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": false,
+          "command": "/home/pi/scripts/updateone.sh",
+          "timeout": 15
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "upgrade"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "System"
+    }
+  },
+  "mqtt:topic:mosquitto:cooling": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Cooling Controls and Settings",
+      "bridgeUID": {
+        "segments": [
+          "mqtt",
+          "broker",
+          "mosquitto"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "cooling",
+              "mode"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "Cooling Mode",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/cmnd/coolingmode",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s",
+              "stateTopic": "hestia/local/stat/coolingmode"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "cooling",
+              "control"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "switch"
+            ]
+          },
+          "label": "Cooling Switch",
+          "configuration": {
+            "properties": {
+              "retained": false,
+              "postCommand": false,
+              "formatBeforePublish": "%s",
+              "commandTopic": "hestia/local/cmnd/coolingstate/POWER",
+              "stateTopic": "hestia/local/stat/coolingstate/power",
+              "off": "OFF",
+              "on": "ON"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "cooling",
+              "boost"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "number"
+            ]
+          },
+          "label": "Cooling Boost Time",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/coolingboostremtime",
+              "retained": false,
+              "postCommand": false,
+              "step": 1.0,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {}
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "cooling"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "mqtt",
+          "topic"
+        ]
+      },
+      "location": "Controls"
+    }
+  },
+  "exec:command:backupcommand": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Backup",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "backupcommand",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "backupcommand",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "backupcommand",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "backupcommand",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "backupcommand",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": false,
+          "command": "/home/pi/scripts/backup.sh",
+          "timeout": 120
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "backupcommand"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Maintenance"
+    }
+  },
+  "exec:command:gettempunit": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Temperature Unit",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettempunit",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettempunit",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettempunit",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettempunit",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettempunit",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "autorun": false,
+          "interval": 600,
+          "command": "/home/pi/scripts/gettempunit.sh",
+          "timeout": 60
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "gettempunit"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Settings"
+    }
+  },
+  "exec:command:getwlanip": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "WLAN IP",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwlanip",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwlanip",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwlanip",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwlanip",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getwlanip",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 600,
+          "autorun": false,
+          "command": "/home/pi/scripts/getwlan0ip.sh",
+          "timeout": 60
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "getwlanip"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Network"
+    }
+  },
+  "exec:command:gitinstalled": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Git Installed Version",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitinstalled",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitinstalled",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitinstalled",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitinstalled",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitinstalled",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": false,
+          "command": "/home/pi/scripts/getgitinstalledversion.sh",
+          "timeout": 15
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "gitinstalled"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "System"
+    }
+  },
+  "exec:command:gitlatest": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Git Latest Version",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitlatest",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitlatest",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitlatest",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitlatest",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gitlatest",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 604800,
+          "autorun": false,
+          "command": "sudo /home/pi/scripts/getgitlatestversion.sh",
+          "timeout": 15
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "gitlatest"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "System"
+    }
+  },
+  "exec:command:gettz": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Get Time Zone",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettz",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettz",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettz",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettz",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "gettz",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 3600,
+          "autorun": true,
+          "command": "/home/pi/scripts/gettz.sh",
+          "timeout": 60
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "gettz"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Settings"
+    }
+  },
+  "exec:command:setsystemtype": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Set SystemType",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "setsystemtype",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "setsystemtype",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "setsystemtype",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "setsystemtype",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "setsystemtype",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "autorun": true,
+          "interval": 0,
+          "command": "echo \"%2$s\" \u003e /home/pi/scripts/systemtype",
+          "timeout": 15
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "setsystemtype"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Settings"
+    }
+  },
+  "exec:command:getcpuload": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "CPU Load",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getcpuload",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getcpuload",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getcpuload",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getcpuload",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getcpuload",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 300,
+          "autorun": true,
+          "command": "/home/pi/scripts/getcpuload.sh",
+          "timeout": 60
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "getcpuload"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "System"
+    }
+  },
+  "exec:command:getsystemtype": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Get System Type",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getsystemtype",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getsystemtype",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getsystemtype",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getsystemtype",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "getsystemtype",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 600,
+          "autorun": false,
+          "command": "/home/pi/scripts/getsystemtype.sh",
+          "timeout": 60
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "getsystemtype"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      },
+      "location": "Settings"
+    }
+  },
+  "exec:command:2d1db4f3": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Command pin16 on",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "2d1db4f3",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "2d1db4f3",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "2d1db4f3",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "2d1db4f3",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "2d1db4f3",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin16_on.sh",
+          "timeout": 1
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "2d1db4f3"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
+    }
+  },
+  "exec:command:c325b5e8": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Command pin18 off",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c325b5e8",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c325b5e8",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c325b5e8",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c325b5e8",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c325b5e8",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin18_off.sh",
+          "timeout": 1
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "c325b5e8"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
+    }
+  },
   "exec:command:gettemp": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -5387,6 +6480,162 @@
         ]
       },
       "location": "Sensors"
+    }
+  },
+  "exec:command:c9b8ec24": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Command pin12 off",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c9b8ec24",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c9b8ec24",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c9b8ec24",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c9b8ec24",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "c9b8ec24",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin12_off.sh",
+          "timeout": 1
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "c9b8ec24"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
     }
   },
   "mqtt:topic:mosquitto:heating": {
@@ -5551,163 +6800,6 @@
       "location": "Controls"
     }
   },
-  "exec:command:getpublicip": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "Public IP",
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getpublicip",
-              "output"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "output"
-            ]
-          },
-          "label": "Output",
-          "description": "Output of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getpublicip",
-              "input"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "input"
-            ]
-          },
-          "label": "Input",
-          "description": "Input that will be passed as second parameter to the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Number",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getpublicip",
-              "exit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "exit"
-            ]
-          },
-          "label": "Exit Value",
-          "description": "The exit value of the last execution of the command",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "Switch",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getpublicip",
-              "run"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "run"
-            ]
-          },
-          "label": "Running",
-          "description": "Send ON to execute the command and the current state tells whether it is running or not",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "DateTime",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "exec",
-              "command",
-              "getpublicip",
-              "lastexecution"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "exec",
-              "lastexecution"
-            ]
-          },
-          "label": "Last Execution",
-          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
-          "configuration": {
-            "properties": {}
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {
-          "transform": "REGEX((.*))",
-          "interval": 600,
-          "autorun": false,
-          "command": "/home/pi/scripts/getpublicip.sh",
-          "timeout": 60
-        }
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "exec",
-          "command",
-          "getpublicip"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "exec",
-          "command"
-        ]
-      },
-      "location": "Network"
-    }
-  },
   "exec:command:restorecommand": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -5863,6 +6955,162 @@
         ]
       },
       "location": "Maintenance"
+    }
+  },
+  "exec:command:ea48ffb7": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Command pin16 off",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "ea48ffb7",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "ea48ffb7",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "ea48ffb7",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "ea48ffb7",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "ea48ffb7",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin16_off.sh",
+          "timeout": 1
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "ea48ffb7"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
     }
   },
   "mqtt:topic:mosquitto:fan": {

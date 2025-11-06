@@ -15,6 +15,14 @@
 /home/pi/scripts/getwifiinfo.sh
 /home/pi/scripts/getwlan0ip.sh
 /home/pi/scripts/getwlan0mac.sh
+/home/pi/scripts/pin12_on.sh
+/home/pi/scripts/pin12_off.sh
+/home/pi/scripts/pin16_on.sh
+/home/pi/scripts/pin16_off.sh
+/home/pi/scripts/pin18_on.sh
+/home/pi/scripts/pin18_off.sh
+/home/pi/scripts/pin23_on.sh
+/home/pi/scripts/pin23_off.sh
 /home/pi/scripts/reboot.sh
 /home/pi/scripts/restore.sh &
 /home/pi/scripts/shutdown.sh
