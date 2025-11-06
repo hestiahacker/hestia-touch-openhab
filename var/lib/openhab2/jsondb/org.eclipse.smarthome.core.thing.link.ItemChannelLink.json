@@ -57,6 +57,25 @@
       "itemName": "TempUnit"
     }
   },
+  "Pin12off -\u003e exec:command:c9b8ec24:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "c9b8ec24",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin12off"
+    }
+  },
   "Network_SSID -\u003e exec:command:getssid:output": {
     "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
     "value": {
@@ -388,6 +407,44 @@
       "itemName": "Network_WLAN_MAC"
     }
   },
+  "Pin16off -\u003e exec:command:ea48ffb7:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "ea48ffb7",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin16off"
+    }
+  },
+  "Pin18off -\u003e exec:command:c325b5e8:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "c325b5e8",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin18off"
+    }
+  },
   "Network_WAN_IP -\u003e mqtt:topic:mosquitto:networking:wanip": {
     "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
     "value": {
@@ -406,6 +463,25 @@
         }
       },
       "itemName": "Network_WAN_IP"
+    }
+  },
+  "Pin23off -\u003e exec:command:de3288c7:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "de3288c7",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin23off"
     }
   },
   "Network_WLAN_MAC -\u003e mqtt:topic:mosquitto:networking:wlanmac": {
@@ -527,6 +603,25 @@
       "itemName": "F2CCommand"
     }
   },
+  "Pin18on -\u003e exec:command:cdd050a4:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "cdd050a4",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin18on"
+    }
+  },
   "TempSetpoint -\u003e mqtt:topic:mosquitto:sensors:tempsetpoint": {
     "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
     "value": {
@@ -583,6 +678,25 @@
         }
       },
       "itemName": "BackupTimestampCommand"
+    }
+  },
+  "Pin23on -\u003e exec:command:5a54c0be:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "5a54c0be",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin23on"
     }
   },
   "MyPressureProxy -\u003e mqtt:topic:mosquitto:sensors:pressure": {
@@ -915,6 +1029,25 @@
       "itemName": "C2FCommand"
     }
   },
+  "Pin12on -\u003e exec:command:e264ceac:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "e264ceac",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin12on"
+    }
+  },
   "GetTempUnit -\u003e exec:command:gettempunit:run": {
     "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
     "value": {
@@ -1128,6 +1261,25 @@
         }
       },
       "itemName": "UpgradeCommand"
+    }
+  },
+  "Pin16on -\u003e exec:command:2d1db4f3:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "2d1db4f3",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin16on"
     }
   },
   "HeatingMode -\u003e mqtt:topic:mosquitto:heating:mode": {

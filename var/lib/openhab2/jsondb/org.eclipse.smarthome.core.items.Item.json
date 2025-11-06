@@ -23,6 +23,16 @@
       "category": "pressure"
     }
   },
+  "Pin12off": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
   "PreviousTempReading": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -115,6 +125,16 @@
       "category": "humidity"
     }
   },
+  "Pin23off": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
   "FanModeCtrl": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -189,6 +209,15 @@
       "tags": [],
       "label": "External Max Temperature [%.0f °]",
       "category": "temperature"
+    }
+  },
+  "Pin18on": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": ""
     }
   },
   "MyPressureProxy": {
@@ -432,6 +461,16 @@
       "category": "none"
     }
   },
+  "Pin18off": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
   "Network_WLAN_MAC": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -535,6 +574,16 @@
       "tags": [],
       "label": "UI Buttons",
       "category": "wallswitch"
+    }
+  },
+  "Pin16on": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
     }
   },
   "MyTempProxy": {
@@ -896,6 +945,16 @@
       "category": "temperature"
     }
   },
+  "Pin23on": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
   "MaxTempSetpoint": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -933,6 +992,16 @@
       "tags": [],
       "label": "Fan Mode [%s]",
       "category": "heating"
+    }
+  },
+  "Pin16off": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
     }
   },
   "Network_SSID": {
@@ -1271,6 +1340,16 @@
       "tags": [],
       "label": "Get System Type",
       "category": "switch"
+    }
+  },
+  "Pin12on": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
     }
   },
   "RestoreOnStartup": {
