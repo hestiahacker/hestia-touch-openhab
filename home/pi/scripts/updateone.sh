@@ -7,10 +7,18 @@ if [ "$ip" == "192.168.4.1" ]
  exit 0;
 fi
 
+# Load VERSION_ID variable to tell us what version of Debian we're using
+. /etc/os-release
+
 ### PREPARE UPDATE FOLDER
 sudo mkdir /home/pi/scripts/gitupdate;
 cd /home/pi/scripts/gitupdate;
-sudo git clone --single-branch --branch ONE https://github.com/HestiaPi/hestia-touch-openhab.git;
+if [[ $VERSION_ID -ge 12 ]]; then
+	branch="ONE-bookworm"
+else
+	branch="ONE"
+fi
+sudo git clone --single-branch --branch $branch https://github.com/hestiahacker/hestia-touch-openhab.git;
 cd /home/pi/scripts/gitupdate/hestia-touch-openhab
 sudo rm -rf .git LICENSE README.md;
 
