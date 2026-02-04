@@ -55,3 +55,9 @@ PIN_MAP.put("EU_Heating2Pin", "Pin16");
 PIN_MAP.put("EU_HotWaterPin", "Pin12");
 PIN_MAP.put("EU_HumidityPin", "Pin18");
 
+// heat pump pinout
+PIN_MAP.put("HP_Stage1Pin", "Pin12");
+PIN_MAP.put("HP_Stage2Pin", "Pin16");
+PIN_MAP.put("HP_EHeatPin", "Pin20");
+PIN_MAP.put("HP_CoolingPin", "Pin23"); // aka. reversing pin
+PIN_MAP.put("HP_FanPin", "Pin18");

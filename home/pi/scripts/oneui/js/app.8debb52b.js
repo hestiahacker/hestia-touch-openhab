@@ -332,7 +332,7 @@ var typeface_roboto = __webpack_require__("d4b8");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"787b1058-vue-loader-template"}!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/home-screen.vue?vue&type=template&id=300022fe&scoped=true&
 var home_screenvue_type_template_id_300022fe_scoped_true_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{attrs:{"id":"home-screen"}},[(_vm.showPowerModal)?_c('power-settings-modal',{attrs:{"mode":_vm.lastTappedMode,"on-option-select":_vm.powerModalCallback}}):_vm._e(),_c('div',{staticClass:"top-container"},[(_vm.showHeating)?_c('div',{staticClass:"mode-btn heat",class:{
-        animated: _vm.modes.heat.running || _vm.modes.heat2.running,
+        animated: _vm.modes.heat.running,
         'color-heat': (_vm.selectedMode || _vm.lastTappedMode) === 'heat',
         'color-off': (_vm.selectedMode || _vm.lastTappedMode) !== 'heat'
       },on:{"click":function($event){return _vm.openPowerModal('heat')}}},[(!_vm.modes.heat2.running)?_c('icon-heat',{attrs:{"size":"76%"}}):_vm._e(),(_vm.modes.heat2.running)?_c('icon-heat2',{attrs:{"size":"76%"}}):_vm._e()],1):_vm._e(),(_vm.showCooling)?_c('div',{staticClass:"mode-btn cool",class:{
@@ -1157,11 +1157,16 @@ var icon_info_component = Object(componentNormalizer["a" /* default */])(
       var _this = this;
 
       var modes = {
-        cool: function cool() {
-          return 'Cooling';
+        cool: function cool() { //heat2 just means stage 2
+          return _this.modes.heat2.running ? '2nd-stage cooling' : 'Cooling';
         },
         heat: function heat() {
-          return _this.modes.heat2.running ? '2nd-stage heating' : 'Heating';
+          if(_this.modes.heat3.running) {
+            return 'Emergency heating';
+          } else if (_this.modes.heat2.running) {
+            return '2nd-stage heating';
+          }
+          return 'Heating';
         },
         hotwater: function hotwater() {
           return 'Hot water';
@@ -1542,8 +1547,12 @@ vue_runtime_esm["a" /* default */].use(vuex_esm["a" /* default */]);
         // How much to increment the target temperature with each tap
         stepSize: 0.5
       },
-      // 2nd-stage or emergency heating
+      // 2nd-stage heating
       heat2: {
+        running: false
+      },
+      // 3rd-stage heating
+      heat3: {
         running: false
       },
       cool: {
@@ -1553,6 +1562,10 @@ vue_runtime_esm["a" /* default */].use(vuex_esm["a" /* default */]);
         running: false,
         setValue: 0,
         stepSize: 1
+      },
+      // 2nd-stage cooling
+      cool2: {
+        running: false
       },
       fan: {
         active: false,
@@ -1637,7 +1650,23 @@ function mqttClientPlugin(store) {
       store.state.modes.heat.running = message === 'ON';
     },
     'hestia/local/cmnd/heating2state/POWER': function hestiaLocalCmndHeating2statePOWER(message) {
-      store.state.modes.heat2.running = message === 'ON';
+      // the Heating2 item just means that we're using stage2, but that could
+      // be stage2 cooling! The item was made when the only stage2 supported
+      // was 2nd stage heating, but now we can also do 2nd stage cooling if
+      // wired and operating in heat pump mode.
+      if(store.state.modes.cool.active) {
+        // we are cooling, which means the message is about cooling
+        store.state.modes.cool2.running = message === 'ON';
+        store.state.modes.heat2.running = false; // never stage2 heat with cooling active
+        store.state.modes.heat3.running = false;
+      } if(store.state.modes.heat.active) {
+	// we are heating, which means the message is about heating
+        store.state.modes.heat2.running = message === 'ON';
+        store.state.modes.cool2.running = false;
+      }
+    },
+    'hestia/local/cmnd/heating3state/POWER': function hestiaLocalCmndHeating3statePOWER(message) {
+      store.state.modes.heat3.running = message === 'ON';
     },
     'hestia/local/cmnd/fanstate/POWER': function hestiaLocalCmndFanstatePOWER(message) {
       store.state.modes.fan.running = message === 'ON';
@@ -1729,7 +1758,7 @@ function mqttClientPlugin(store) {
     'hestia/local/systemtype': function hestiaLocalSystemtype(message) {
       store.state.info.systemtype = message;
 
-      if (store.state.info.systemtype === 'US') {
+      if (store.state.info.systemtype === 'US' || store.state.info.systemtype === 'HP') {
         // Typical US/HVAC modes
         store.state.showHumidity = false;
         store.state.showHotWater = false;
@@ -1749,13 +1778,13 @@ function mqttClientPlugin(store) {
       store.state.info.season = message;
 
       if (store.state.info.season === 'SUMMER') {
-        if (store.state.info.systemtype === 'US') {
+        if (store.state.info.systemtype === 'US' || store.state.info.systemtype === 'HP') {
           store.state.showCooling = true;
         }
 
         store.state.showHeating = true;
       } else {
-        if (store.state.info.systemtype === 'US') {
+        if (store.state.info.systemtype === 'US' || store.state.info.systemtype === 'HP') {
           store.state.showCooling = true;
         } else {
           store.state.showCooling = false;
@@ -1769,7 +1798,7 @@ function mqttClientPlugin(store) {
     console.debug('WS connected to: ' + host);
     client.subscribe([// Comfort
     'hestia/local/comfortmode', 'hestia/local/hysteresis', // Heating
-    'hestia/local/cmnd/heatingmode', 'hestia/local/cmnd/heatingstate/POWER', 'hestia/local/cmnd/heating2state/POWER', 'hestia/local/mintempsetpoint', // Cooling
+    'hestia/local/cmnd/heatingmode', 'hestia/local/cmnd/heatingstate/POWER', 'hestia/local/cmnd/heating2state/POWER', 'hestia/local/cmnd/heating3state/POWER', 'hestia/local/mintempsetpoint', // Cooling
     'hestia/local/cmnd/coolingmode', 'hestia/local/cmnd/coolingstate/POWER', 'hestia/local/maxtempsetpoint', // Fan
     'hestia/local/cmnd/fanmode', 'hestia/local/cmnd/fanstate/POWER', // Hot water
     'hestia/local/cmnd/hotwatermode', 'hestia/local/cmnd/hotwaterstate/POWER', // Humidity
