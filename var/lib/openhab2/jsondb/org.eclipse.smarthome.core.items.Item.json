@@ -45,6 +45,16 @@
       "category": "temperature"
     }
   },
+  "Heating3Pin": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Heating3",
+      "category": "fire"
+    }
+  },
   "PreviousPressureReading": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -105,16 +115,6 @@
       "category": "time"
     }
   },
-  "RestoreButton": {
-    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
-    "value": {
-      "groupNames": [],
-      "itemType": "String",
-      "tags": [],
-      "label": "Restore [%s]",
-      "category": "switch"
-    }
-  },
   "MyHumiProxy": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -123,6 +123,16 @@
       "tags": [],
       "label": "Humidity [%.0f %%]",
       "category": "humidity"
+    }
+  },
+  "RestoreButton": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Restore [%s]",
+      "category": "switch"
     }
   },
   "Pin23off": {
@@ -153,7 +163,7 @@
       ],
       "itemType": "Number",
       "tags": [],
-      "label": "Threshold [%.1f °]",
+      "label": "2nd stage threshold [%.1f °]",
       "category": "temperature"
     }
   },
@@ -230,16 +240,6 @@
       "category": "pressure"
     }
   },
-  "GitLatestVersionCommand": {
-    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
-    "value": {
-      "groupNames": [],
-      "itemType": "Switch",
-      "tags": [],
-      "label": "Get latest version",
-      "category": "switch"
-    }
-  },
   "HotWaterBoostTime": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -251,6 +251,16 @@
       "tags": [],
       "label": "Hot Water Boost Time [%.0f min]",
       "category": "time"
+    }
+  },
+  "GitLatestVersionCommand": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get latest version",
+      "category": "switch"
     }
   },
   "TempUnit": {
@@ -451,6 +461,16 @@
       "category": "none"
     }
   },
+  "Pin20on": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
   "PrevModes": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -495,6 +515,18 @@
       "category": "heating"
     }
   },
+  "Heating3": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "3rd Stage Heating [%s]",
+      "category": "heating"
+    }
+  },
   "Heating2InitialTemp": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -505,6 +537,16 @@
       "tags": [],
       "label": "2nd Stage Heating Initial Temp [%.1f]",
       "category": "temperature"
+    }
+  },
+  "Pin20": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
     }
   },
   "BoostTimes": {
@@ -598,18 +640,6 @@
       "category": "temperature"
     }
   },
-  "GitLatestVersion": {
-    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
-    "value": {
-      "groupNames": [
-        "RestoreOnStartup"
-      ],
-      "itemType": "String",
-      "tags": [],
-      "label": "Latest version [%s]",
-      "category": "returnpipe"
-    }
-  },
   "GitInstalledVersion": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -620,6 +650,18 @@
       "tags": [],
       "label": "Installed version [%s]",
       "category": "shield"
+    }
+  },
+  "GitLatestVersion": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Latest version [%s]",
+      "category": "returnpipe"
     }
   },
   "SystemType": {
@@ -700,6 +742,17 @@
       "category": "switch"
     }
   },
+  "Stage2Pin": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "category": "heating"
+    }
+  },
   "MyTempProxyF": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -710,6 +763,16 @@
       "tags": [],
       "label": "Temperature [%.0f °F]",
       "category": "temperature"
+    }
+  },
+  "Pin20off": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
     }
   },
   "HeatingPrevMode": {
@@ -1263,6 +1326,18 @@
       "tags": [],
       "label": "Uptime [%s]",
       "category": "status"
+    }
+  },
+  "Heating3Delta": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "e-heat threshold [%.1f °]",
+      "category": "temperature"
     }
   },
   "HumidityMode": {

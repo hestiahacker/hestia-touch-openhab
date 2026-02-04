@@ -388,6 +388,25 @@
       "itemName": "MyPressure"
     }
   },
+  "Pin20on -\u003e exec:command:bd4e058c:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "bd4e058c",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin20on"
+    }
+  },
   "Network_WLAN_MAC -\u003e exec:command:getwlanmac:output": {
     "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
     "value": {
@@ -542,6 +561,25 @@
         }
       },
       "itemName": "MyHumiProxy"
+    }
+  },
+  "Pin20off -\u003e exec:command:b4e7cbd5:run": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "b4e7cbd5",
+          "run"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin20off"
     }
   },
   "Comfort_Mode -\u003e mqtt:topic:mosquitto:sensors:comfortmode": {

@@ -1,12 +1,12 @@
 sitemap default label="Main Menu"
 {
-  Frame label="Temperature" visibility=[SystemType=="US"] {
+  Frame label="Temperature" visibility=[SystemType!="EU"] {
     Text item=MyTempProxyC visibility=[TempUnit=="C"]
     Text item=MyTempProxyF visibility=[TempUnit=="F"]
     Switch item=Comfort_Mode label="Comfort Mode []" mappings=[ "COMFORT"="COMFORT", "ECO"="ECO"]
   }
 
-  Frame label="Heating" visibility=[SystemType=="US"] {
+  Frame label="Heating" visibility=[SystemType!="EU"] {
     Switch item=HeatingMode label="Heating Mode []" mappings=[ "ON"="AUTO", "OFF"="OFF", "Boost"="BOOST"]
     Setpoint item=MinTempSetpointC label="Heating Setpoint [%.1f °C]" minValue=0 maxValue=40 step=0.5 icon="temperature" visibility=[TempUnit=="C"]
     Setpoint item=MinTempSetpointF label="Heating Setpoint [%.0f °F]" minValue=32 maxValue=86 step=1 icon="temperature" visibility=[TempUnit=="F"]
@@ -14,7 +14,7 @@ sitemap default label="Main Menu"
     Setpoint item=HeatingRemBoostTime minValue=0 maxValue=1440 step=1 visibility=[HeatingMode==Boost]
   }
 
-  Frame label="Cooling" visibility=[SystemType=="US"] {
+  Frame label="Cooling" visibility=[SystemType!="EU"] {
     Switch item=CoolingMode label="Cooling Mode []" mappings=[ "ON"="AUTO", "OFF"="OFF", "Boost"="BOOST"]
     Setpoint item=MaxTempSetpointC label="Cooling Setpoint [%.1f °C]" minValue=0 maxValue=40 step=0.5 icon="temperature" visibility=[TempUnit=="C"]
     Setpoint item=MaxTempSetpointF label="Cooling Setpoint [%.0f °F]" minValue=32 maxValue=86 step=1 icon="temperature" visibility=[TempUnit=="F"]
@@ -22,7 +22,7 @@ sitemap default label="Main Menu"
     Setpoint item=CoolingRemBoostTime minValue=0 maxValue=1440 step=1 visibility=[CoolingMode==Boost]
   }
 
-  Frame label="Fan" visibility=[SystemType=="US"] {
+  Frame label="Fan" visibility=[SystemType!="EU"] {
     Text item=FanPin label="Fan [%s]" icon="switch" visibility=[FanCtrl==OFF]
     Switch item=FanMode label="Fan Mode []" mappings=[ "ON"="ON", "OFF"="OFF" ] visibility=[FanCtrl!=OFF]
   }
@@ -70,10 +70,12 @@ sitemap default label="Main Menu"
             Switch item=ShutdownButton icon="sunset" mappings=["ON"="Shutdown"]
           }
         }
-        Text label="2nd Stage Heating" icon="heating" {
+        Text label="Multi-stage" icon="heating" {
           Frame {
-            Switch item=Heating2 label="2nd Stage Heating []" mappings=[ "ON"="ON", "OFF"="OFF"]
+            Switch item=Heating2 label="2nd Stage []" mappings=[ "ON"="ON", "OFF"="OFF"]
             Setpoint item=Heating2Delta minValue=0 maxValue=20 step=1 icon="temperature"
+            Switch item=Heating3 label="Emergency Heat []" mappings=[ "ON"="ON", "OFF"="OFF"] visibility=[SystemType=="HP"]
+            Setpoint item=Heating3Delta minValue=0 maxValue=20 step=1 icon="temperature" visibility=[SystemType=="HP"]
             Setpoint item=Heating2Time minValue=0 maxValue=120 step=1 icon="clock"
           }
         }
@@ -81,7 +83,7 @@ sitemap default label="Main Menu"
         Setpoint item=Comfort_Value label="Comfort Range [%.0f °F]" minValue=1 maxValue=10 step=1 icon="temperature" visibility=[TempUnit=="F"]
         Switch item=TempUnit label="Temperature Unit []" mappings=["F"="°F", "C"="°C"]
         Switch item=HumidityType label="Humidity Type []" mappings=["Dehumidify"="Dehumidify", "Humidify"="Humidify"] visibility=[SystemType=="EU"]
-        Switch item=SystemType label="System Type []" mappings=["US"="HVAC", "EU"="Generic"]
+        Switch item=SystemType label="System Type []" mappings=["US"="HVAC", "EU"="Generic", "HP"="Heat Pump"]
         Selection item=System_TZ_Set mappings=[  // THIS IS UNAVOIDABLY UGLY - START SCROLLING NOW
           "Africa/Abidjan"="Africa/Abidjan +00:00",
           "Africa/Accra"="Africa/Accra +00:00",

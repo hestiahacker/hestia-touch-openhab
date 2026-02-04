@@ -2907,6 +2907,162 @@
       }
     }
   },
+  "exec:command:b4e7cbd5": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Command pin20 off",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "b4e7cbd5",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "b4e7cbd5",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "b4e7cbd5",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "b4e7cbd5",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "b4e7cbd5",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin20_off.sh",
+          "timeout": 1
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "b4e7cbd5"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
+    }
+  },
   "exec:command:getpublicip": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -3815,6 +3971,162 @@
       }
     }
   },
+  "exec:command:bd4e058c": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "Command pin20 on",
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "bd4e058c",
+              "output"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "output"
+            ]
+          },
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "bd4e058c",
+              "input"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "input"
+            ]
+          },
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "bd4e058c",
+              "exit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "exit"
+            ]
+          },
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "bd4e058c",
+              "run"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "run"
+            ]
+          },
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "DateTime",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "exec",
+              "command",
+              "bd4e058c",
+              "lastexecution"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "exec",
+              "lastexecution"
+            ]
+          },
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd\u0027T\u0027HH:mm:ss.SSSZ format",
+          "configuration": {
+            "properties": {}
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {
+          "transform": "REGEX((.*))",
+          "interval": 0,
+          "autorun": true,
+          "command": "/home/pi/scripts/pin20_on.sh",
+          "timeout": 1
+        }
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "exec",
+          "command",
+          "bd4e058c"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "exec",
+          "command"
+        ]
+      }
+    }
+  },
   "exec:command:getbackuptimestampcommand": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -3972,6 +4284,100 @@
       "location": "Maintenance"
     }
   },
+  "mqtt:topic:mosquitto:types": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "System Configs",
+      "bridgeUID": {
+        "segments": [
+          "mqtt",
+          "broker",
+          "mosquitto"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "types",
+              "systype"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "System Type",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/systemtype",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "types",
+              "tempunit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "Temp Unit",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/tempunit",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {}
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "types"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "mqtt",
+          "topic"
+        ]
+      },
+      "location": "Settings"
+    }
+  },
   "exec:command:shutdowncommand": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -4127,100 +4533,6 @@
         ]
       },
       "location": "Maintenance"
-    }
-  },
-  "mqtt:topic:mosquitto:types": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "System Configs",
-      "bridgeUID": {
-        "segments": [
-          "mqtt",
-          "broker",
-          "mosquitto"
-        ]
-      },
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "types",
-              "systype"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "System Type",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/systemtype",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "types",
-              "tempunit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "Temp Unit",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/tempunit",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {}
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "mqtt",
-          "topic",
-          "mosquitto",
-          "types"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "mqtt",
-          "topic"
-        ]
-      },
-      "location": "Settings"
     }
   },
   "mqtt:broker:mosquitto": {
@@ -6773,6 +7085,36 @@
               "postCommand": false,
               "step": 1.0,
               "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Switch",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "heating",
+              "control3"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "switch"
+            ]
+          },
+          "label": "Heating3 Switch",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/cmnd/heating3state/POWER",
+              "stateTopic": "hestia/local/stat/heating3state/power",
+              "off": "OFF",
+              "on": "ON"
             }
           },
           "properties": {},

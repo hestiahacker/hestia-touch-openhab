@@ -21,6 +21,8 @@
 /home/pi/scripts/pin16_off.sh
 /home/pi/scripts/pin18_on.sh
 /home/pi/scripts/pin18_off.sh
+/home/pi/scripts/pin20_on.sh
+/home/pi/scripts/pin20_off.sh
 /home/pi/scripts/pin23_on.sh
 /home/pi/scripts/pin23_off.sh
 /home/pi/scripts/reboot.sh
