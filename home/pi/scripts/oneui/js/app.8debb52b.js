@@ -1157,8 +1157,8 @@ var icon_info_component = Object(componentNormalizer["a" /* default */])(
       var _this = this;
 
       var modes = {
-        cool: function cool() { //heat2 just means stage 2
-          return _this.modes.heat2.running ? '2nd-stage cooling' : 'Cooling';
+        cool: function cool() {
+          return _this.modes.cool2.running ? '2nd-stage cooling' : 'Cooling';
         },
         heat: function heat() {
           if(_this.modes.heat3.running) {
@@ -1648,6 +1648,11 @@ function mqttClientPlugin(store) {
     },
     'hestia/local/cmnd/heatingstate/POWER': function hestiaLocalCmndHeatingstatePOWER(message) {
       store.state.modes.heat.running = message === 'ON';
+      // if the heat was turned off, it means stage 2/3 were turned off too
+      if(store.state.modes.heat.running === 'OFF') {
+        store.state.modes.heat3.running = false;
+        store.state.modes.heat2.running = false;
+      }
     },
     'hestia/local/cmnd/heating2state/POWER': function hestiaLocalCmndHeating2statePOWER(message) {
       // the Heating2 item just means that we're using stage2, but that could
@@ -1943,7 +1948,13 @@ function updateMode(state, mode) {
       modeState.boostEnabled = true;
     } else {
       modeState.active = false;
+      modeState.running = false;
       modeState.boostEnabled = false;
+      // if we're turning off stage1 heat, also turn off stages 2 & 3
+      if(mode == "heat") {
+        state.modes.heat3.running = false;
+        state.modes.heat2.running = false;
+      }
     }
   };
 }
