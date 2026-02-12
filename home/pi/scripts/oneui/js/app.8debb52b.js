@@ -1659,12 +1659,12 @@ function mqttClientPlugin(store) {
       // be stage2 cooling! The item was made when the only stage2 supported
       // was 2nd stage heating, but now we can also do 2nd stage cooling if
       // wired and operating in heat pump mode.
-      if(store.state.modes.cool.active) {
+      if(store.state.modes.cool.running) {
         // we are cooling, which means the message is about cooling
         store.state.modes.cool2.running = message === 'ON';
         store.state.modes.heat2.running = false; // never stage2 heat with cooling active
         store.state.modes.heat3.running = false;
-      } if(store.state.modes.heat.active) {
+      } else if(store.state.modes.heat.running) {
 	// we are heating, which means the message is about heating
         store.state.modes.heat2.running = message === 'ON';
         store.state.modes.cool2.running = false;
