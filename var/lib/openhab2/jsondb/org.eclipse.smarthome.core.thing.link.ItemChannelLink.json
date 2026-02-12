@@ -1,4 +1,24 @@
 {
+  "Heating3Pin -\u003e mqtt:topic:mosquitto:heating:control3": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "heating",
+          "control3"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Heating3Pin"
+    }
+  },
   "System_CPU_TEMP -\u003e exec:command:getcputemperature:output": {
     "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
     "value": {
