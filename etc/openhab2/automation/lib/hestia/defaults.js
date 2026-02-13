@@ -61,3 +61,20 @@ PIN_MAP.put("HP_Stage2Pin", "Pin16");
 PIN_MAP.put("HP_EHeatPin", "Pin20");
 PIN_MAP.put("HP_CoolingPin", "Pin23"); // aka. reversing pin
 PIN_MAP.put("HP_FanPin", "Pin18");
+
+// Hepler function for forced air HVAC/Heat Pumps to set the fan back to its
+// previous state as long as the heating/cooling isn't active.
+function restoreFanState() {
+  // do not change the fan state if heating or cooling is active
+  if(items["HeatingPin"] != ON && items["CoolingPin"] != ON) {
+    var fanPin = PIN_MAP.get(items["SystemType"]+"_FanPin");
+    logInfo("restorefan", "Setting the fan back to what it was");
+    commandIfDifferent("FanCtrl", ON);  // allow the user to control the fan
+    var mode = (items["FanPrevMode"] != "ON") ? "OFF" : "ON";
+    commandIfDifferent("FanMode", mode);
+    if(mode == "ON")
+      commandIfDifferent(fanPin + "on", ON);
+    else
+      commandIfDifferent(fanPin + "off", ON);
+  }
+}
