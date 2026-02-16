@@ -36,6 +36,7 @@ DEFAULTS.put("Heating2Delta", 0);      // 2nd state heating default temperature 
 // Boost Times
 DEFAULTS.put("HeatingBoostTime", 10);  // Default heating boost time
 DEFAULTS.put("CoolingBoostTime", 10);  // Default cooling boost time
+DEFAULTS.put("FanBoostTime", 10);  // Default cooling boost time
 DEFAULTS.put("HotWaterBoostTime", 10);  // Default hot water boost time
 DEFAULTS.put("HumidityBoostTime", 10); // Default humidity boost time
 

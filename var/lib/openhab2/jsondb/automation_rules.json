@@ -374,6 +374,15 @@
             "itemName": "HumidityRemBoostTime"
           },
           "type": "core.ItemStateChangeTrigger"
+        },
+        {
+          "id": "6",
+          "label": "FanRemBoostTime changed",
+          "description": "",
+          "configuration": {
+            "itemName": "FanRemBoostTime"
+          },
+          "type": "core.ItemStateChangeTrigger"
         }
       ],
       "conditions": [],

@@ -1398,6 +1398,26 @@
       "itemName": "Network_WLAN_IP"
     }
   },
+  "FanRemBoostTime -\u003e mqtt:topic:mosquitto:fan:boost": {
+    "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "fan",
+          "boost"
+        ]
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "FanRemBoostTime"
+    }
+  },
   "RestoreCommand -\u003e exec:command:restorecommand:run": {
     "class": "org.eclipse.smarthome.core.thing.link.ItemChannelLink",
     "value": {
