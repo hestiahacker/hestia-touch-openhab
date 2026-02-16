@@ -4284,100 +4284,6 @@
       "location": "Maintenance"
     }
   },
-  "mqtt:topic:mosquitto:types": {
-    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
-    "value": {
-      "label": "System Configs",
-      "bridgeUID": {
-        "segments": [
-          "mqtt",
-          "broker",
-          "mosquitto"
-        ]
-      },
-      "channels": [
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "types",
-              "systype"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "System Type",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/systemtype",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        },
-        {
-          "acceptedItemType": "String",
-          "kind": "STATE",
-          "uid": {
-            "segments": [
-              "mqtt",
-              "topic",
-              "mosquitto",
-              "types",
-              "tempunit"
-            ]
-          },
-          "channelTypeUID": {
-            "segments": [
-              "mqtt",
-              "string"
-            ]
-          },
-          "label": "Temp Unit",
-          "configuration": {
-            "properties": {
-              "commandTopic": "hestia/local/tempunit",
-              "retained": true,
-              "postCommand": false,
-              "formatBeforePublish": "%s"
-            }
-          },
-          "properties": {},
-          "defaultTags": []
-        }
-      ],
-      "configuration": {
-        "properties": {}
-      },
-      "properties": {},
-      "uid": {
-        "segments": [
-          "mqtt",
-          "topic",
-          "mosquitto",
-          "types"
-        ]
-      },
-      "thingTypeUID": {
-        "segments": [
-          "mqtt",
-          "topic"
-        ]
-      },
-      "location": "Settings"
-    }
-  },
   "exec:command:shutdowncommand": {
     "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
     "value": {
@@ -4533,6 +4439,100 @@
         ]
       },
       "location": "Maintenance"
+    }
+  },
+  "mqtt:topic:mosquitto:types": {
+    "class": "org.eclipse.smarthome.core.thing.internal.ThingImpl",
+    "value": {
+      "label": "System Configs",
+      "bridgeUID": {
+        "segments": [
+          "mqtt",
+          "broker",
+          "mosquitto"
+        ]
+      },
+      "channels": [
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "types",
+              "systype"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "System Type",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/systemtype",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "String",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "types",
+              "tempunit"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "string"
+            ]
+          },
+          "label": "Temp Unit",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/local/tempunit",
+              "retained": true,
+              "postCommand": false,
+              "formatBeforePublish": "%s"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        }
+      ],
+      "configuration": {
+        "properties": {}
+      },
+      "properties": {},
+      "uid": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "types"
+        ]
+      },
+      "thingTypeUID": {
+        "segments": [
+          "mqtt",
+          "topic"
+        ]
+      },
+      "location": "Settings"
     }
   },
   "mqtt:broker:mosquitto": {
@@ -7526,6 +7526,33 @@
               "stateTopic": "hestia/local/stat/fanstate/power",
               "off": "OFF",
               "on": "ON"
+            }
+          },
+          "properties": {},
+          "defaultTags": []
+        },
+        {
+          "acceptedItemType": "Number",
+          "kind": "STATE",
+          "uid": {
+            "segments": [
+              "mqtt",
+              "topic",
+              "mosquitto",
+              "fan",
+              "boost"
+            ]
+          },
+          "channelTypeUID": {
+            "segments": [
+              "mqtt",
+              "number"
+            ]
+          },
+          "label": "Fan boost Time",
+          "configuration": {
+            "properties": {
+              "commandTopic": "hestia/fanboostremtime"
             }
           },
           "properties": {},

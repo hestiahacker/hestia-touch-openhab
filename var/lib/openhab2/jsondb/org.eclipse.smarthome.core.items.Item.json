@@ -115,16 +115,6 @@
       "category": "time"
     }
   },
-  "MyHumiProxy": {
-    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
-    "value": {
-      "groupNames": [],
-      "itemType": "Number",
-      "tags": [],
-      "label": "Humidity [%.0f %%]",
-      "category": "humidity"
-    }
-  },
   "RestoreButton": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -133,6 +123,16 @@
       "tags": [],
       "label": "Restore [%s]",
       "category": "switch"
+    }
+  },
+  "MyHumiProxy": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Humidity [%.0f %%]",
+      "category": "humidity"
     }
   },
   "Pin23off": {
@@ -240,6 +240,16 @@
       "category": "pressure"
     }
   },
+  "GitLatestVersionCommand": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get latest version",
+      "category": "switch"
+    }
+  },
   "HotWaterBoostTime": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -251,16 +261,6 @@
       "tags": [],
       "label": "Hot Water Boost Time [%.0f min]",
       "category": "time"
-    }
-  },
-  "GitLatestVersionCommand": {
-    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
-    "value": {
-      "groupNames": [],
-      "itemType": "Switch",
-      "tags": [],
-      "label": "Get latest version",
-      "category": "switch"
     }
   },
   "TempUnit": {
@@ -357,6 +357,19 @@
       "itemType": "Number",
       "tags": [],
       "label": "Heating Remaining Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "FanRemBoostTime": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "RemBoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Fan Remaining Boost Time [%.0f min]",
       "category": "time"
     }
   },
@@ -583,6 +596,19 @@
       "category": "switch"
     }
   },
+  "FanBoostTime": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "BoostTimes",
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Fan Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
   "Network_WAN_IP": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -640,18 +666,6 @@
       "category": "temperature"
     }
   },
-  "GitInstalledVersion": {
-    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
-    "value": {
-      "groupNames": [
-        "RestoreOnStartup"
-      ],
-      "itemType": "String",
-      "tags": [],
-      "label": "Installed version [%s]",
-      "category": "shield"
-    }
-  },
   "GitLatestVersion": {
     "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
     "value": {
@@ -662,6 +676,18 @@
       "tags": [],
       "label": "Latest version [%s]",
       "category": "returnpipe"
+    }
+  },
+  "GitInstalledVersion": {
+    "class": "org.eclipse.smarthome.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Installed version [%s]",
+      "category": "shield"
     }
   },
   "SystemType": {

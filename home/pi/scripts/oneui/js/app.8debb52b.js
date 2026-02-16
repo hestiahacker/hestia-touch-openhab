@@ -1570,7 +1570,6 @@ vue_runtime_esm["a" /* default */].use(vuex_esm["a" /* default */]);
       fan: {
         active: false,
         boostEnabled: false,
-        // always false
         boostTimeRemaining: 0,
         running: false
       },
@@ -1690,6 +1689,9 @@ function mqttClientPlugin(store) {
     },
     'hestia/heatingboostremtime': function hestiaHeatingboostremtime(message) {
       store.state.modes.heat.boostTimeRemaining = Number(message);
+    },
+    'hestia/fanboostremtime': function hestiaFanboostremtime(message) {
+      store.state.modes.fan.boostTimeRemaining = Number(message);
     },
     'hestia/hotwaterboostremtime': function hestiaHotwaterboostremtime(message) {
       store.state.modes.hotwater.boostTimeRemaining = Number(message);
@@ -1812,7 +1814,7 @@ function mqttClientPlugin(store) {
     // System settings
     'hestia/local/wanip', 'hestia/local/wlanip', 'hestia/local/ssid', 'hestia/local/wlaninfo', 'hestia/local/wlanmac', 'hestia/local/cputemp', 'hestia/local/cpuload', 'hestia/local/useddisk', // Unit settings
     'hestia/local/tempunit', 'hestia/local/systemtype', 'hestia/local/season', // Boost mode timers
-    'hestia/heatingboostremtime', 'hestia/coolingboostremtime', 'hestia/humidityboostremtime', 'hestia/hotwaterboostremtime'], function (error) {
+    'hestia/heatingboostremtime', 'hestia/coolingboostremtime', 'hestia/fanboostremtime', 'hestia/humidityboostremtime', 'hestia/hotwaterboostremtime'], function (error) {
       if (error) {
         throw new Error(error);
       }
