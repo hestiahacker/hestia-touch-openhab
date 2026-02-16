@@ -432,6 +432,9 @@ var power_settings_modalvue_type_template_id_13195a37_scoped_true_staticRenderFn
         }, {
           key: 'OFF',
           label: 'Off'
+        }, {
+          key: 'Boost',
+          label: 'Boost'
         }];
       }
     },
