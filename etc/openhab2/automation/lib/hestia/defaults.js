@@ -64,18 +64,23 @@ PIN_MAP.put("HP_CoolingPin", "Pin23"); // aka. reversing pin
 PIN_MAP.put("HP_FanPin", "Pin18");
 
 // Hepler function for forced air HVAC/Heat Pumps to set the fan back to its
-// previous state as long as the heating/cooling isn't active.
+// previous state as long as the heating/cooling isn't active and the user
+// hasn't instructed the fan to boost for some amount of time.
 function restoreFanState() {
   // do not change the fan state if heating or cooling is active
   if(items["HeatingPin"] != ON && items["CoolingPin"] != ON) {
-    var fanPin = PIN_MAP.get(items["SystemType"]+"_FanPin");
-    logInfo("restorefan", "Setting the fan back to what it was");
-    commandIfDifferent("FanCtrl", ON);  // allow the user to control the fan
-    var mode = (items["FanPrevMode"] != "ON") ? "OFF" : "ON";
-    commandIfDifferent("FanMode", mode);
-    if(mode == "ON")
-      commandIfDifferent(fanPin + "on", ON);
-    else
-      commandIfDifferent(fanPin + "off", ON);
+    // Unless the fan is boosting, we want to turn it off
+    if(items["FanMode"] != "Boost") {
+      var fanPin = PIN_MAP.get(items["SystemType"]+"_FanPin");
+      logInfo("restorefan", "Setting the fan back to what it was: " + items["FanPrevMode"]);
+      var mode = (items["FanPrevMode"] != "ON") ? "OFF" : "ON";
+      commandIfDifferent("FanMode", mode);
+      if(mode == "ON")
+        commandIfDifferent(fanPin + "on", ON);
+      else
+        commandIfDifferent(fanPin + "off", ON);
+    }
+    // whether we're boosting or not, we want to allow the user to control the fan
+    commandIfDifferent("FanCtrl", ON);
   }
 }
