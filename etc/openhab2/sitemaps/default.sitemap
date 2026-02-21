@@ -23,7 +23,8 @@ sitemap default label="Main Menu"
   }
 
   Frame label="Fan" visibility=[SystemType!="EU"] {
-    Switch item=FanMode label="Fan Mode []" mappings=[ "ON"="ON", "AUTO"="AUTO", "Boost"="BOOST" ]
+    Switch item=FanMode label="Fan Mode []" mappings=[ "ON"="ON", "OFF"="AUTO", "Boost"="BOOST" ] visibility=[FanCtrl!=OFF]
+    Switch item=FanMode label="Fan Mode []" mappings=[ "ON"="ON", "AUTO"="AUTO", "Boost"="BOOST" ] visibility=[FanCtrl==OFF]
     Setpoint item=FanBoostTime minValue=10 maxValue=1440 step=10 visibility=[FanMode!=Boost]
     Setpoint item=FanRemBoostTime minValue=0 maxValue=1440 step=1 visibility=[FanMode==Boost]
   }
