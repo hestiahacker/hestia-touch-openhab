@@ -792,25 +792,9 @@ TEXT_REPLACEMENTS = (
 # The HestiaPi ONE board wires the BME280 to the GPIO I2C bus, which the
 # Bookworm kernel exposes as i2c-2 (older images used i2c-1).  Probe the
 # common buses and both sensor addresses so one image works on either board.
-BME280_ORIGINAL_BLOCK = """\
-bus = smbus.SMBus(1) # Rev 2 Pi, Pi 2 & Pi 3 uses bus 1
-                     # Rev 1 Pi uses bus 0
-
-try:
-    (chip_id, chip_version) = bus.read_i2c_block_data(0x76, 0xD0, 2)
-    DEVICE = 0x76 # Default device I2C address
-except IOError as e:
-    try:
-        (chip_id, chip_version) = bus.read_i2c_block_data(0x77, 0xD0, 2)
-        DEVICE = 0x77
-    except IOError as e:
-        # This should never happen, but if it does, fall back to device 0x76
-        DEVICE = 0x76 # Default device I2C address
-"""
-
 BME280_DISCOVERY_BLOCK = """\
 bus = None
-DEVICE = 0x76 # Default device I2C address
+device = 0x76 # Default device I2C address
 for attempt in range(5):
     for bus_id in (1, 2, 0):
         try:
@@ -821,7 +805,7 @@ for attempt in range(5):
             try:
                 (chip_id, chip_version) = candidate.read_i2c_block_data(device_id, 0xD0, 2)
                 bus = candidate
-                DEVICE = device_id
+                device = device_id
                 break
             except (IOError, OSError):
                 pass
@@ -836,16 +820,7 @@ if bus is None:
 """
 
 
-def convert_bme280(text: str, name: str) -> str:
-    if BME280_ORIGINAL_BLOCK not in text:
-        raise SystemExit(f"{name}: expected BME280 bus setup not found")
-    return text.replace(BME280_ORIGINAL_BLOCK, BME280_DISCOVERY_BLOCK)
-
-
 def convert_script_text(text: str, name: str) -> str:
-    if name.startswith("bme280") and name.endswith(".py"):
-        text = convert_bme280(text, name)
-
     if name == "getssid.sh":
         old = """/sbin/iwconfig wlan0 | grep -oP 'ESSID:"\\K[^"]*'"""
         new = r"/sbin/iw dev wlan0 link | grep -oP 'SSID:\s*\K.*'"

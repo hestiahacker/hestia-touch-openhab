@@ -24,20 +24,31 @@ from ctypes import c_short
 from ctypes import c_byte
 from ctypes import c_ubyte
 
+bus = None
+device = 0x76 # Default device I2C address
+for attempt in range(5):
+    for bus_id in (1, 2, 0):
+        try:
+            candidate = smbus.SMBus(bus_id)
+        except (IOError, OSError):
+            continue
+        for device_id in (0x76, 0x77):
+            try:
+                (chip_id, chip_version) = candidate.read_i2c_block_data(device_id, 0xD0, 2)
+                bus = candidate
+                device = device_id
+                break
+            except (IOError, OSError):
+                pass
+        if bus is not None:
+            break
+    if bus is not None:
+        break
+    time.sleep(0.5)
 
-bus = smbus.SMBus(1) # Rev 2 Pi, Pi 2 & Pi 3 uses bus 1
-                     # Rev 1 Pi uses bus 0
+if bus is None:
+    raise RuntimeError("No BME280 sensor found on i2c buses 1, 2 or 0")
 
-try:
-    (chip_id, chip_version) = bus.read_i2c_block_data(0x76, 0xD0, 2)
-    DEVICE = 0x76 # Default device I2C address
-except IOError as e:
-    try:
-        (chip_id, chip_version) = bus.read_i2c_block_data(0x77, 0xD0, 2)
-        DEVICE = 0x77
-    except IOError as e:
-        # This should never happen, but if it does, fall back to device 0x76
-        DEVICE = 0x76 # Default device I2C address
 
 def getShort(data, index):
   # return two bytes from data as a signed 16-bit value
