@@ -8,16 +8,18 @@ The converter is intentionally small and deterministic:
     in v5 (see PORTING_NOTES.md);
   * writes a complete conf/ + userdata/jsondb/ tree under v5/.
 
-Run from anywhere:  python3 tools/build_v5.py
+Run from anywhere:  python3 tools/build_v5.py [--gpio-board auto|rpi|orangepi-zero2w|generic]
 """
 
 from __future__ import annotations
 
+import argparse
 import json
 import os
 import re
 import shutil
 import stat
+import subprocess
 import zipfile
 from pathlib import Path
 
@@ -33,7 +35,10 @@ DB = OUT / "userdata" / "jsondb"
 OUT_SCRIPTS = OUT / "home" / "pi" / "scripts"
 SETUP = OUT / "setup"
 
-PIN_IDS = (12, 16, 18, 23)
+# Logical HestiaPi GPIO numbers (Raspberry Pi BCM numbering).  The helper
+# translates these to the Linux GPIO numbers used by the actual board.
+PIN_IDS = (12, 16, 18, 20, 23)
+GPIO_BOARD_DEFAULT = "auto"
 SCRIPT_TYPE = "application/javascript;version=ECMAScript-5.1"
 
 ITEM_CLASS = "org.openhab.core.items.ManagedItemProvider$PersistedItem"
@@ -125,33 +130,108 @@ createTimerSecs(2, kick);
 
 SETGPIO = """\
 #!/bin/bash
-# HestiaPi GPIO output helper for openHAB 5 (sysfs, same pins as the v2
-# gpio binding).  Usage: hestia-setgpio.sh <bcm-pin> <0|1>
+# HestiaPi GPIO output helper for openHAB 5.
+#
+# The HestiaPi rules keep the Raspberry Pi BCM pin numbers (12, 16, 18, 20,
+# 23) so the same rules work on every board.  This helper translates a
+# logical pin to the Linux global GPIO number for the board it is running on.
+# Usage: hestia-setgpio.sh <logical-pin> <0|1>
+#
+# Environment:
+#   HESTIA_GPIO_BOARD=auto|rpi|orangepi-zero2w|generic
+#   HESTIA_GPIO_ROOT=/sys/class/gpio
+#   HESTIA_GPIO_DRY_RUN=1  print the resolved GPIO and exit
 set -u
 
 PIN="${1:?pin number required}"
 VALUE="${2:?value 0 or 1 required}"
 GPIO_ROOT="${HESTIA_GPIO_ROOT:-/sys/class/gpio}"
+DEFAULT_BOARD="auto"
+BOARD="${HESTIA_GPIO_BOARD:-$DEFAULT_BOARD}"
 
 case "$VALUE" in
   0|1) ;;
   *) echo "value must be 0 or 1" >&2; exit 2 ;;
 esac
 
+detect_board() {
+  local compatible=""
+  local model=""
+  if [ -r /proc/device-tree/compatible ]; then
+    compatible="$(tr '\\0' '\\n' < /proc/device-tree/compatible)"
+  fi
+  if [ -r /proc/device-tree/model ]; then
+    model="$(tr -d '\\0' < /proc/device-tree/model)"
+  fi
+  case "$compatible $model" in
+    *raspberrypi*|*"Raspberry Pi"*) echo rpi ;;
+    *xunlong,orangepi-zero2w*|*"OrangePi Zero 2W"*) echo orangepi-zero2w ;;
+    *allwinner,sun50i-h618*) echo orangepi-zero2w ;;
+    *) echo generic ;;
+  esac
+}
+
+if [ "$BOARD" = "auto" ]; then
+  BOARD="$(detect_board)"
+fi
+
+case "$BOARD" in
+  rpi|generic)
+    # Raspberry Pi sysfs numbering is the BCM number.  "generic" is the
+    # same 1:1 mapping for boards that expose the Linux GPIO numbers
+    # directly.
+    GPIO="$PIN"
+    ;;
+  orangepi|orangepi-zero2w|opi)
+    BOARD="orangepi-zero2w"
+    # Orange Pi Zero 2W (Allwinner H618) 40-pin header.  The HestiaPi PCB
+    # uses the same physical pins as on the Raspberry Pi:
+    #   physical 12 = PI1  = 257   (logical BCM 18)
+    #   physical 16 = PI14 = 270   (logical BCM 23)
+    #   physical 32 = PI11 = 267   (logical BCM 12)
+    #   physical 36 = PC12 = 76    (logical BCM 16)
+    #   physical 38 = PI4  = 260   (logical BCM 20)
+    case "$PIN" in
+      12) GPIO=267 ;;
+      16) GPIO=76 ;;
+      18) GPIO=257 ;;
+      20) GPIO=260 ;;
+      23) GPIO=270 ;;
+      *)
+        echo "unsupported logical GPIO $PIN for $BOARD" >&2
+        exit 2
+        ;;
+    esac
+    ;;
+  *)
+    echo "unknown GPIO board '$BOARD' (use auto, rpi, orangepi-zero2w or generic)" >&2
+    exit 2
+    ;;
+esac
+
+if [ "${HESTIA_GPIO_DRY_RUN:-0}" = "1" ]; then
+  echo "board=$BOARD logical=$PIN gpio=$GPIO value=$VALUE"
+  exit 0
+fi
+
 if [ ! -d "$GPIO_ROOT" ]; then
   echo "GPIO sysfs is not available at $GPIO_ROOT" >&2
   exit 1
 fi
 
-if [ ! -d "$GPIO_ROOT/gpio$PIN" ]; then
-  echo "$PIN" > "$GPIO_ROOT/export" || {
-    echo "cannot export GPIO $PIN" >&2
+if [ ! -d "$GPIO_ROOT/gpio$GPIO" ]; then
+  echo "$GPIO" > "$GPIO_ROOT/export" || {
+    echo "cannot export GPIO $GPIO (logical $PIN on $BOARD)" >&2
     exit 1
   }
 fi
 
-echo out > "$GPIO_ROOT/gpio$PIN/direction" 2>/dev/null || true
-echo "$VALUE" > "$GPIO_ROOT/gpio$PIN/value"
+if ! echo out > "$GPIO_ROOT/gpio$GPIO/direction" 2>/dev/null; then
+  echo "cannot set GPIO $GPIO direction to out" >&2
+  exit 1
+fi
+
+echo "$VALUE" > "$GPIO_ROOT/gpio$GPIO/value"
 """
 
 SUDOERS = "openhab ALL=(root) NOPASSWD: " + ", ".join(
@@ -256,8 +336,9 @@ def build_items() -> None:
     for name in sorted(source):
         items[name] = {"class": ITEM_CLASS, "value": source[name]["value"]}
 
-    # The v2 gpio binding items lived in items/default.items.  They are moved
-    # into JSONDB so the links below are restored atomically with the items.
+    # The v2 GPIO switch items are moved into JSONDB so the links below are
+    # restored atomically with the items.  Pin numbers stay in Raspberry Pi
+    # BCM numbering; hestia-setgpio.sh translates them for the actual board.
     for pin in PIN_IDS:
         items[f"Pin{pin}"] = {
             "class": ITEM_CLASS,
@@ -280,7 +361,7 @@ def build_metadata() -> None:
         metadata[key] = {"class": METADATA_CLASS, "value": value}
 
     # A v5 transform-profile link does not feed the item state back, so the
-    # four GPIO switch items need autoupdate to behave like the v2 gpio items.
+    # GPIO switch items need autoupdate to behave like the v2 gpio items.
     for pin in PIN_IDS:
         key = f"autoupdate:Pin{pin}"
         metadata[key] = {
@@ -335,6 +416,14 @@ def build_things() -> None:
             ),
             "label": value.get("label", ""),
         }
+        if thing_type == "mqtt:topic":
+            # The v2 broker had retainMessages=true, so late subscribers such
+            # as a restarted OneUI kiosk immediately received the last state.
+            # v5 has no broker-wide retain option; set it on every outgoing
+            # channel instead.
+            for channel in converted["channels"]:
+                if channel["configuration"].get("commandTopic"):
+                    channel["configuration"]["retained"] = True
         if value.get("bridgeUID"):
             converted["bridgeUID"] = colon(value["bridgeUID"]["segments"])
 
@@ -495,25 +584,48 @@ def fix_rule_script(script: str, rule_name: str) -> str:
             '});',
         )
 
+    # The v2 gpio binding reported the logical pin items as OFF at startup.
+    # The v5 Exec replacement leaves an unused pin (for example CoolingPin on
+    # a heat pump that has never cooled) at NULL.  The original guard required
+    # CoolingPin == OFF before turning heating off, so with NULL it blocked
+    # HeatingCtrl OFF forever.  Only an actually-ON cooling request should
+    # prevent turning the heat off.
+    if rule_name == "Heating/Cooling Check":
+        old = '     (mode == "Heating" && items["CoolingPin"] == "OFF")) {'
+        new = '     (mode == "Heating" && items["CoolingPin"] != "ON")) {'
+        if old in script:
+            script = script.replace(old, new)
+
     # The boost countdown timer also uses the event and the state value after
-    # the rule has finished; capture both for the callback.
+    # the rule has finished; capture both for the callback.  Apply the changes
+    # line by line so whitespace differences between branches do not matter.
     if rule_name == "Boost Looping Timer":
-        script = script.replace(
-            '  var runme = function(){ \n'
-            '    events.sendCommand(mode+"BoostTimer", OFF);\n'
-            '    var timeLeft = newState.intValue() - 1;\n'
-            '    logDebug("Minutes = " + newState + "  Time Left = " + timeLeft.toString());\n'
-            '    events.sendCommand(event.itemName, timeLeft.toString());\n'
-            '  }',
-            '  var boostItem = event.itemName;\n'
-            '  var remaining = newState.intValue();\n'
-            '  var runme = function(){ \n'
-            '    events.sendCommand(mode+"BoostTimer", OFF);\n'
-            '    var timeLeft = remaining - 1;\n'
-            '    logDebug("Minutes = " + remaining + "  Time Left = " + timeLeft.toString());\n'
-            '    events.sendCommand(boostItem, timeLeft.toString());\n'
-            '  }',
-        )
+        replacements = [
+            (
+                "  var runme = function(){",
+                "  var boostItem = event.itemName;\n"
+                "  var remaining = newState.intValue();\n"
+                "  var runme = function(){",
+            ),
+            (
+                "    var timeLeft = newState.intValue() - 1;",
+                "    var timeLeft = remaining - 1;",
+            ),
+            (
+                '"Minutes = " + newState + "  Time Left = "',
+                '"Minutes = " + remaining + "  Time Left = "',
+            ),
+            (
+                "    events.sendCommand(event.itemName, timeLeft.toString());",
+                "    events.sendCommand(boostItem, timeLeft.toString());",
+            ),
+        ]
+        for old, new in replacements:
+            if old not in script:
+                raise SystemExit(
+                    "Boost Looping Timer: expected source line not found: " + old.strip()
+                )
+            script = script.replace(old, new)
 
     return script
 
@@ -677,8 +789,94 @@ TEXT_REPLACEMENTS = (
     ("sudo python setup.py install", "sudo python3 setup.py install"),
 )
 
+# The HestiaPi ONE board wires the BME280 to the GPIO I2C bus, which the
+# Bookworm kernel exposes as i2c-2 (older images used i2c-1).  Probe the
+# common buses and both sensor addresses so one image works on either board.
+BME280_ORIGINAL_BLOCK = """\
+bus = smbus.SMBus(1) # Rev 2 Pi, Pi 2 & Pi 3 uses bus 1
+                     # Rev 1 Pi uses bus 0
+
+try:
+    (chip_id, chip_version) = bus.read_i2c_block_data(0x76, 0xD0, 2)
+    DEVICE = 0x76 # Default device I2C address
+except IOError as e:
+    try:
+        (chip_id, chip_version) = bus.read_i2c_block_data(0x77, 0xD0, 2)
+        DEVICE = 0x77
+    except IOError as e:
+        # This should never happen, but if it does, fall back to device 0x76
+        DEVICE = 0x76 # Default device I2C address
+"""
+
+BME280_DISCOVERY_BLOCK = """\
+bus = None
+DEVICE = 0x76 # Default device I2C address
+for attempt in range(5):
+    for bus_id in (1, 2, 0):
+        try:
+            candidate = smbus.SMBus(bus_id)
+        except (IOError, OSError):
+            continue
+        for device_id in (0x76, 0x77):
+            try:
+                (chip_id, chip_version) = candidate.read_i2c_block_data(device_id, 0xD0, 2)
+                bus = candidate
+                DEVICE = device_id
+                break
+            except (IOError, OSError):
+                pass
+        if bus is not None:
+            break
+    if bus is not None:
+        break
+    time.sleep(0.5)
+
+if bus is None:
+    raise RuntimeError("No BME280 sensor found on i2c buses 1, 2 or 0")
+"""
+
+
+def convert_bme280(text: str, name: str) -> str:
+    if BME280_ORIGINAL_BLOCK not in text:
+        raise SystemExit(f"{name}: expected BME280 bus setup not found")
+    return text.replace(BME280_ORIGINAL_BLOCK, BME280_DISCOVERY_BLOCK)
+
 
 def convert_script_text(text: str, name: str) -> str:
+    if name.startswith("bme280") and name.endswith(".py"):
+        text = convert_bme280(text, name)
+
+    if name == "getssid.sh":
+        old = """/sbin/iwconfig wlan0 | grep -oP 'ESSID:"\\K[^"]*'"""
+        new = r"/sbin/iw dev wlan0 link | grep -oP 'SSID:\s*\K.*'"
+        if old not in text:
+            raise SystemExit("getssid.sh: expected iwconfig command not found")
+        text = text.replace(old, new)
+
+    if name == "getwifiinfo.sh":
+        old = (
+            "RSSI=$(/sbin/iwconfig wlan0 | grep 'Signal level' | "
+            "awk '{print $4}' | sed 's/.*[=:]//g' | cut -d/ -f1);"
+        )
+        new = "RSSI=$(/sbin/iw dev wlan0 link | grep 'signal:' | awk '{print $2}');"
+        if old not in text:
+            raise SystemExit("getwifiinfo.sh: expected iwconfig command not found")
+        text = text.replace(old, new)
+
+    pin_script = re.fullmatch(r"pin(\d+)_(on|off)\.sh", name)
+    if pin_script:
+        pin = int(pin_script.group(1))
+        value = 1 if pin_script.group(2) == "on" else 0
+        old = f"/usr/bin/gpioset gpiochip0 {pin}={value}"
+        if old not in text:
+            raise SystemExit(f"{name}: expected gpioset command not found")
+        new = (
+            "# The board-specific GPIO mapping lives in hestia-setgpio.sh,\n"
+            "# so this script works on both Raspberry Pi and Orange Pi.\n"
+            f"/usr/bin/sudo /home/pi/scripts/hestia-setgpio.sh {pin} {value}"
+        )
+        text = text.replace(old, new)
+
     if name == "updateone.sh":
         return (
             "#!/bin/bash\n"
@@ -718,10 +916,19 @@ def build_scripts() -> None:
         else:
             shutil.copy2(source, target)
 
-    write_text(OUT_SCRIPTS / "hestia-setgpio.sh", SETGPIO, 0o755)
+    helper = SETGPIO.replace(
+        'DEFAULT_BOARD="auto"', f'DEFAULT_BOARD="{GPIO_BOARD_DEFAULT}"'
+    )
+    write_text(OUT_SCRIPTS / "hestia-setgpio.sh", helper, 0o755)
     write_text(SETUP / "hestia-sudoers", SUDOERS, 0o440)
-    write_text(SETUP / "hestia-setgpio.sh", SETGPIO, 0o755)
+    write_text(SETUP / "hestia-setgpio.sh", helper, 0o755)
     copy_file(TEMPLATES / "install.sh", SETUP / "install.sh", 0o755)
+    copy_file(TEMPLATES / "kiosk.service", SETUP / "kiosk.service", 0o644)
+    copy_file(TEMPLATES / "kiosk-xinitrc", SETUP / "kiosk-xinitrc", 0o755)
+    copy_file(TEMPLATES / "mosquitto-oneui.conf",
+              SETUP / "mosquitto-oneui.conf", 0o644)
+    copy_file(TEMPLATES / "xorg-20-kiosk.conf",
+              SETUP / "xorg-20-kiosk.conf", 0o644)
 
 
 # ---------------------------------------------------------------------------
@@ -798,6 +1005,24 @@ def validate_output() -> None:
                 if module_type == "application/javascript":
                     problems.append(f"rule {uid} {rule['value']['name']}: unversioned JavaScript")
 
+    heatcheck = next(
+        (rule["value"] for rule in rules.values()
+         if rule["value"]["name"] == "Heating/Cooling Check"),
+        None,
+    )
+    if heatcheck is None:
+        problems.append("missing Heating/Cooling Check rule")
+    else:
+        heatcheck_scripts = [
+            module.get("configuration", {}).get("script", "")
+            for kind in ("conditions", "actions")
+            for module in heatcheck.get(kind, [])
+        ]
+        if not any('items["CoolingPin"] != "ON"' in script for script in heatcheck_scripts):
+            problems.append(
+                "Heating/Cooling Check still blocks heating OFF when CoolingPin is NULL"
+            )
+
     exec_commands = sorted({
         thing["value"]["configuration"]["command"]
         for thing in things.values()
@@ -811,9 +1036,64 @@ def validate_output() -> None:
     if exec_commands != whitelist:
         problems.append("exec whitelist does not exactly match exec thing commands")
 
-    bme280 = (OUT_SCRIPTS / "bme280.py").read_text(encoding="utf-8", errors="ignore")
-    if "SMBus(2)" not in bme280:
-        problems.append("bme280.py no longer uses SMBus(2)")
+    for thing in things.values():
+        value = thing["value"]
+        if value.get("thingTypeUID") != "mqtt:topic":
+            continue
+        for channel in value.get("channels", []):
+            config = channel.get("configuration", {})
+            if config.get("commandTopic") and not config.get("retained"):
+                problems.append(
+                    f"mqtt channel {channel['uid']} publishes without retain"
+                )
+
+    for name in ("bme280.py", "bme280F.py", "bme280C.py"):
+        script = (OUT_SCRIPTS / name).read_text(encoding="utf-8", errors="ignore")
+        if BME280_DISCOVERY_BLOCK not in script:
+            problems.append(f"{name} does not probe the supported I2C buses")
+
+    for name in ("getssid.sh", "getwifiinfo.sh"):
+        script = (OUT_SCRIPTS / name).read_text(encoding="utf-8")
+        if "iwconfig" in script or "/sbin/iw dev wlan0 link" not in script:
+            problems.append(f"{name} still depends on the removed iwconfig tool")
+
+    gpio_helper = OUT_SCRIPTS / "hestia-setgpio.sh"
+    helper_text = gpio_helper.read_text(encoding="utf-8")
+    if f'DEFAULT_BOARD="{GPIO_BOARD_DEFAULT}"' not in helper_text:
+        problems.append("hestia-setgpio.sh does not use the requested default board")
+    gpio_expected = {
+        "rpi": {12: 12, 16: 16, 18: 18, 20: 20, 23: 23},
+        "orangepi-zero2w": {12: 267, 16: 76, 18: 257, 20: 260, 23: 270},
+        "generic": {12: 12, 16: 16, 18: 18, 20: 20, 23: 23},
+    }
+    for board, pins in gpio_expected.items():
+        for pin, gpio in pins.items():
+            result = subprocess.run(
+                ["/bin/bash", str(gpio_helper), str(pin), "1"],
+                env={
+                    **os.environ,
+                    "HESTIA_GPIO_BOARD": board,
+                    "HESTIA_GPIO_DRY_RUN": "1",
+                },
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            expected = f"board={board} logical={pin} gpio={gpio} value=1"
+            if result.returncode != 0 or expected not in result.stdout:
+                problems.append(
+                    f"hestia-setgpio.sh maps {board} pin {pin} incorrectly: "
+                    f"{result.stdout.strip() or result.stderr.strip()}"
+                )
+
+    for pin in PIN_IDS:
+        for state, value in (("on", 1), ("off", 0)):
+            script = (OUT_SCRIPTS / f"pin{pin}_{state}.sh").read_text(encoding="utf-8")
+            expected = f"/usr/bin/sudo /home/pi/scripts/hestia-setgpio.sh {pin} {value}"
+            if expected not in script or "gpioset gpiochip0" in script:
+                problems.append(
+                    f"pin{pin}_{state}.sh does not use the board-aware GPIO helper"
+                )
 
     addons = (CONF / "services" / "addons.cfg").read_text(encoding="utf-8")
     for required in (
@@ -836,6 +1116,33 @@ def validate_output() -> None:
         if not (CONF / relative).is_file():
             problems.append(f"missing conf placeholder {relative}")
 
+    for relative in (
+        "setup/install.sh",
+        "setup/kiosk.service",
+        "setup/kiosk-xinitrc",
+        "setup/mosquitto-oneui.conf",
+        "setup/xorg-20-kiosk.conf",
+    ):
+        if not (OUT / relative).is_file():
+            problems.append(f"missing restore file {relative}")
+
+    if not (OUT_SCRIPTS / "oneui" / "index.html").is_file():
+        problems.append("missing home/pi/scripts/oneui/index.html")
+
+    kiosk_service = (SETUP / "kiosk.service").read_text(encoding="utf-8")
+    if "/usr/local/oneui/kiosk-xinitrc" not in kiosk_service:
+        problems.append("kiosk.service does not start the installed OneUI session")
+
+    kiosk_xinitrc = (SETUP / "kiosk-xinitrc").read_text(encoding="utf-8")
+    if "file:///usr/local/oneui/index.html" not in kiosk_xinitrc:
+        problems.append("kiosk-xinitrc does not load /usr/local/oneui/index.html")
+
+    installer = (SETUP / "install.sh").read_text(encoding="utf-8")
+    if "/usr/local/oneui" not in installer or "9001" not in installer:
+        problems.append("install.sh does not install OneUI and the MQTT WebSocket listener")
+    if "usermod -aG i2c openhab" not in installer:
+        problems.append("install.sh does not give the openhab user i2c access")
+
     startup_script = CONF / "automation" / "jsr223" / "hestia_startup.nashornjs"
     if not startup_script.is_file():
         problems.append("missing automation/jsr223/hestia_startup.nashornjs")
@@ -856,6 +1163,21 @@ def validate_output() -> None:
 
 
 def main() -> None:
+    global GPIO_BOARD_DEFAULT
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--gpio-board",
+        choices=("auto", "rpi", "orangepi-zero2w", "generic"),
+        default="auto",
+        help=(
+            "default GPIO mapping baked into hestia-setgpio.sh; 'auto' "
+            "detects the board at runtime and produces one ZIP for both "
+            "Raspberry Pi and Orange Pi (default: auto)"
+        ),
+    )
+    args = parser.parse_args()
+    GPIO_BOARD_DEFAULT = args.gpio_board
+
     if OUT.exists():
         shutil.rmtree(OUT)
     CONF.mkdir(parents=True)

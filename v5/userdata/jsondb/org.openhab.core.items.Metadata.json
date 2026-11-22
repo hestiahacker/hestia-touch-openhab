@@ -265,6 +265,20 @@
       "configuration": {}
     }
   },
+  "autoupdate:Pin20": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "Pin20"
+        ],
+        "uid": "autoupdate:Pin20"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
   "autoupdate:Pin23": {
     "class": "org.openhab.core.items.Metadata",
     "value": {

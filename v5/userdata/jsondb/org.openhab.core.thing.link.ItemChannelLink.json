@@ -1737,6 +1737,27 @@
       "itemName": "Pin18"
     }
   },
+  "Pin20 -> exec:command:setpin20:input": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "setpin20",
+          "input"
+        ],
+        "uid": "exec:command:setpin20:input"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "transform:NASHORNJS",
+          "commandFromItemScript": "|(input == 'ON') ? '1' : '0'"
+        }
+      },
+      "itemName": "Pin20"
+    }
+  },
   "Pin23 -> exec:command:setpin23:input": {
     "class": "org.openhab.core.thing.link.ItemChannelLink",
     "value": {

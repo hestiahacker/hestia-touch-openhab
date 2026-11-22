@@ -34,8 +34,11 @@ add `misc = openhabcloud` to `addons.cfg`.
 The Exec things use `REGEX((.*))` to keep only the command output; this
 requires the Regex Transformation add-on.
 
-The v2 GPIO binding is not used. The four GPIO pins are driven by the Exec
-Binding and `/home/pi/scripts/hestia-setgpio.sh` (Linux sysfs).
+The v2 GPIO binding is not used. The GPIO outputs are driven by the Exec
+Binding and `/home/pi/scripts/hestia-setgpio.sh` (Linux sysfs). The helper
+maps the Raspberry Pi BCM pin numbers used by the rules to the actual Linux
+GPIO numbers, so the same configuration works on a Raspberry Pi Zero 2 W or
+an Orange Pi Zero 2W; no `raspi-gpio` or `gpiod` package is required.
 
 ## Operating-system packages
 

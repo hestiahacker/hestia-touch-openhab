@@ -1,2 +1,4 @@
 #!/bin/bash
-/usr/bin/gpioset gpiochip0 18=0
+# The board-specific GPIO mapping lives in hestia-setgpio.sh,
+# so this script works on both Raspberry Pi and Orange Pi.
+/usr/bin/sudo /home/pi/scripts/hestia-setgpio.sh 18 0

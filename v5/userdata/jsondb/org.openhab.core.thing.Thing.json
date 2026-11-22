@@ -4285,7 +4285,7 @@
           "defaultTags": [],
           "properties": {},
           "configuration": {
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "formatBeforePublish": "%s",
             "commandTopic": "hestia/local/cmnd/coolingstate/POWER",
@@ -4305,7 +4305,7 @@
           "properties": {},
           "configuration": {
             "commandTopic": "hestia/coolingboostremtime",
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "step": 1.0,
             "formatBeforePublish": "%s"
@@ -4353,7 +4353,7 @@
           "defaultTags": [],
           "properties": {},
           "configuration": {
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "formatBeforePublish": "%s",
             "commandTopic": "hestia/local/cmnd/fanstate/POWER",
@@ -4372,7 +4372,8 @@
           "defaultTags": [],
           "properties": {},
           "configuration": {
-            "commandTopic": "hestia/fanboostremtime"
+            "commandTopic": "hestia/fanboostremtime",
+            "retained": true
           }
         }
       ],
@@ -4417,7 +4418,7 @@
           "defaultTags": [],
           "properties": {},
           "configuration": {
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "formatBeforePublish": "%s",
             "commandTopic": "hestia/local/cmnd/heatingstate/POWER",
@@ -4436,7 +4437,7 @@
           "defaultTags": [],
           "properties": {},
           "configuration": {
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "formatBeforePublish": "%s",
             "commandTopic": "hestia/local/cmnd/heating2state/POWER",
@@ -4456,7 +4457,7 @@
           "properties": {},
           "configuration": {
             "commandTopic": "hestia/heatingboostremtime",
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "step": 1.0,
             "formatBeforePublish": "%s"
@@ -4475,7 +4476,8 @@
             "commandTopic": "hestia/local/cmnd/heating3state/POWER",
             "stateTopic": "hestia/local/stat/heating3state/power",
             "off": "OFF",
-            "on": "ON"
+            "on": "ON",
+            "retained": true
           }
         }
       ],
@@ -4520,7 +4522,7 @@
           "defaultTags": [],
           "properties": {},
           "configuration": {
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "formatBeforePublish": "%s",
             "commandTopic": "hestia/local/cmnd/hotwaterstate/POWER",
@@ -4540,7 +4542,7 @@
           "properties": {},
           "configuration": {
             "commandTopic": "hestia/hotwaterboostremtime",
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "step": 1.0,
             "formatBeforePublish": "%s"
@@ -4588,7 +4590,7 @@
           "defaultTags": [],
           "properties": {},
           "configuration": {
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "formatBeforePublish": "%s",
             "commandTopic": "hestia/local/cmnd/humiditystate/POWER",
@@ -4608,7 +4610,7 @@
           "properties": {},
           "configuration": {
             "commandTopic": "hestia/humidityboostremtime",
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "step": 1.0,
             "formatBeforePublish": "%s"
@@ -4735,7 +4737,7 @@
           "properties": {},
           "configuration": {
             "commandTopic": "hestia/local/temperature",
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "step": 1.0,
             "formatBeforePublish": "%.1f"
@@ -4752,7 +4754,7 @@
           "properties": {},
           "configuration": {
             "commandTopic": "hestia/local/humidity",
-            "retained": false,
+            "retained": true,
             "postCommand": false,
             "step": 1.0,
             "formatBeforePublish": "%s"
@@ -4786,7 +4788,8 @@
           "defaultTags": [],
           "properties": {},
           "configuration": {
-            "commandTopic": "hestia/local/pressure"
+            "commandTopic": "hestia/local/pressure",
+            "retained": true
           }
         },
         {
@@ -5289,6 +5292,114 @@
         "thingTypeVersion": "1"
       },
       "UID": "exec:command:setpin18",
+      "thingTypeUID": "exec:command",
+      "location": "GPIO"
+    }
+  },
+  "exec:command:setpin20": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:setpin20:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin20:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin20:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin20:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin20:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin20:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin20:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Set GPIO Pin 20",
+      "configuration": {
+        "command": "/usr/bin/sudo /home/pi/scripts/hestia-setgpio.sh 20 %2$s",
+        "autorun": true,
+        "interval": 0,
+        "timeout": 5,
+        "transform": [
+          "REGEX((.*))"
+        ]
+      },
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "UID": "exec:command:setpin20",
       "thingTypeUID": "exec:command",
       "location": "GPIO"
     }
