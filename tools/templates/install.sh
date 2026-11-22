@@ -38,6 +38,9 @@ chown openhab:openhab "$SCRIPTS"
 for file in systemtype humiditymode tempunit bme280.py bme280C.py bme280F.py; do
   [ -e "$SCRIPTS/$file" ] && chown openhab:openhab "$SCRIPTS/$file"
 done
+# Make sure openhab can see into the user's home directory
+chgrp openhab /home/pi
+chmod g+rx /home/pi
 
 # The Exec binding runs the BME280 scripts as the openhab user.  Without the
 # i2c group it cannot open /dev/i2c-*, and the sensor readings fail.
@@ -70,7 +73,7 @@ else
 fi
 
 # The kiosk is optional: install it only where its user and software exist.
-if getent passwd user >/dev/null \
+if getent passwd pi >/dev/null \
   && command -v startx >/dev/null 2>&1 \
   && command -v chromium >/dev/null 2>&1; then
   if [ -e /dev/fb1 ]; then

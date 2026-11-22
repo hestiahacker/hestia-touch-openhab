@@ -4,7 +4,7 @@ After=systemd-user-sessions.service systemd-logind.service
 Conflicts=getty@tty1.service
 
 [Service]
-User=user
+User=pi
 PAMName=login
 TTYPath=/dev/tty1
 StandardInput=tty
