@@ -1,0 +1,26 @@
+#!/bin/sh
+# HestiaPi kiosk session.  Started by kiosk.service through startx.
+xset s off -dpms s noblank
+
+# Window manager only; no panel, no desktop, no file manager.
+matchbox-window-manager -use_titlebar no -use_desktop_mode plain &
+
+# The OneUI build uses relative asset paths, so it can be loaded directly
+# from the installed directory without running a web server.
+exec chromium \
+  --kiosk \
+  --ozone-platform=x11 \
+  --disable-gpu \
+  --allow-file-access-from-files \
+  --no-first-run \
+  --no-default-browser-check \
+  --noerrdialogs \
+  --disable-infobars \
+  --disable-session-crashed-bubble \
+  --hide-crash-restore-bubble \
+  --disable-translate \
+  --disable-features=TranslateUI \
+  --disable-component-update \
+  --password-store=basic \
+  --user-data-dir="$HOME/.config/chromium-kiosk" \
+  "file:///usr/local/oneui/index.html"

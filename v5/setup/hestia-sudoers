@@ -1,0 +1,1 @@
+openhab ALL=(root) NOPASSWD: /home/pi/scripts/hestia-setgpio.sh, /home/pi/scripts/settz.sh, /home/pi/scripts/getgitlatestversion.sh, /home/pi/scripts/backup.sh, /home/pi/scripts/restore.sh, /home/pi/scripts/reboot.sh, /home/pi/scripts/shutdown.sh

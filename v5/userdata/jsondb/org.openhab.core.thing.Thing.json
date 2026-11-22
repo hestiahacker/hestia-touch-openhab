@@ -1,0 +1,5404 @@
+{
+  "exec:command:2d1db4f3": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:2d1db4f3:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:2d1db4f3:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:2d1db4f3:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:2d1db4f3:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:2d1db4f3:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:2d1db4f3:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:2d1db4f3:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin16 on",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin16_on.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:2d1db4f3",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:5a54c0be": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:5a54c0be:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:5a54c0be:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:5a54c0be:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:5a54c0be:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:5a54c0be:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:5a54c0be:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:5a54c0be:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin23 on",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin23_on.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:5a54c0be",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:b4e7cbd5": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:b4e7cbd5:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:b4e7cbd5:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:b4e7cbd5:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:b4e7cbd5:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:b4e7cbd5:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:b4e7cbd5:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:b4e7cbd5:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin20 off",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin20_off.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:b4e7cbd5",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:backupcommand": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:backupcommand:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:backupcommand:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:backupcommand:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:backupcommand:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:backupcommand:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:backupcommand:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:backupcommand:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Backup",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "sudo /home/pi/scripts/backup.sh",
+        "timeout": 120
+      },
+      "UID": "exec:command:backupcommand",
+      "thingTypeUID": "exec:command",
+      "location": "Maintenance"
+    }
+  },
+  "exec:command:bd4e058c": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:bd4e058c:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:bd4e058c:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:bd4e058c:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:bd4e058c:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:bd4e058c:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:bd4e058c:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:bd4e058c:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin20 on",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin20_on.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:bd4e058c",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:c2f": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:c2f:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c2f:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c2f:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c2f:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c2f:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c2f:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c2f:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "C to F Temp Unit",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "/home/pi/scripts/C2F.sh",
+        "timeout": 15
+      },
+      "UID": "exec:command:c2f",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:c325b5e8": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:c325b5e8:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c325b5e8:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c325b5e8:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c325b5e8:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c325b5e8:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c325b5e8:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c325b5e8:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin18 off",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin18_off.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:c325b5e8",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:c9b8ec24": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:c9b8ec24:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c9b8ec24:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c9b8ec24:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c9b8ec24:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c9b8ec24:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c9b8ec24:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:c9b8ec24:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin12 off",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin12_off.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:c9b8ec24",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:cdd050a4": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:cdd050a4:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:cdd050a4:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:cdd050a4:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:cdd050a4:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:cdd050a4:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:cdd050a4:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:cdd050a4:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin18 on",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin18_on.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:cdd050a4",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:de3288c7": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:de3288c7:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:de3288c7:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:de3288c7:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:de3288c7:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:de3288c7:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:de3288c7:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:de3288c7:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin23 off",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin23_off.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:de3288c7",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:e264ceac": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:e264ceac:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:e264ceac:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:e264ceac:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:e264ceac:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:e264ceac:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:e264ceac:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:e264ceac:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin12 on",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin12_on.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:e264ceac",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:ea48ffb7": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:ea48ffb7:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:ea48ffb7:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:ea48ffb7:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:ea48ffb7:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:ea48ffb7:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:ea48ffb7:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:ea48ffb7:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Command pin16 off",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "/home/pi/scripts/pin16_off.sh",
+        "timeout": 1
+      },
+      "UID": "exec:command:ea48ffb7",
+      "thingTypeUID": "exec:command"
+    }
+  },
+  "exec:command:f2c": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:f2c:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:f2c:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:f2c:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:f2c:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:f2c:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:f2c:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:f2c:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "F to C Temp Unit",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "/home/pi/scripts/F2C.sh",
+        "timeout": 15
+      },
+      "UID": "exec:command:f2c",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:getbackuptimestampcommand": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getbackuptimestampcommand:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getbackuptimestampcommand:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getbackuptimestampcommand:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getbackuptimestampcommand:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getbackuptimestampcommand:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getbackuptimestampcommand:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getbackuptimestampcommand:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Get Backup Timestamp",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "/home/pi/scripts/getbackuptimestamp.sh",
+        "timeout": 150
+      },
+      "UID": "exec:command:getbackuptimestampcommand",
+      "thingTypeUID": "exec:command",
+      "location": "Maintenance"
+    }
+  },
+  "exec:command:getcpuload": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getcpuload:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcpuload:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcpuload:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcpuload:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcpuload:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcpuload:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcpuload:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "CPU Load",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 300,
+        "autorun": true,
+        "command": "/home/pi/scripts/getcpuload.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getcpuload",
+      "thingTypeUID": "exec:command",
+      "location": "System"
+    }
+  },
+  "exec:command:getcputemperature": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getcputemperature:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcputemperature:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcputemperature:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcputemperature:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcputemperature:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcputemperature:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getcputemperature:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "CPU Temperature",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 600,
+        "autorun": true,
+        "command": "/home/pi/scripts/getcputemperature.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getcputemperature",
+      "thingTypeUID": "exec:command",
+      "location": "System"
+    }
+  },
+  "exec:command:gethumi": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:gethumi:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumi:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumi:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumi:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumi:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumi:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumi:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Humidity Sensor",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "autorun": false,
+        "interval": 30,
+        "command": "/home/pi/scripts/getBMEhumi.sh",
+        "timeout": 5
+      },
+      "UID": "exec:command:gethumi",
+      "thingTypeUID": "exec:command",
+      "location": "Sensors"
+    }
+  },
+  "exec:command:gethumiditymode": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:gethumiditymode:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumiditymode:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumiditymode:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumiditymode:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumiditymode:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumiditymode:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gethumiditymode:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Get Humidity Mode",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 600,
+        "autorun": false,
+        "command": "/home/pi/scripts/gethumiditymode.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:gethumiditymode",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:getpublicip": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getpublicip:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getpublicip:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getpublicip:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getpublicip:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getpublicip:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getpublicip:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getpublicip:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Public IP",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 600,
+        "autorun": false,
+        "command": "/home/pi/scripts/getpublicip.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getpublicip",
+      "thingTypeUID": "exec:command",
+      "location": "Network"
+    }
+  },
+  "exec:command:getssid": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getssid:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getssid:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getssid:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getssid:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getssid:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getssid:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getssid:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "SSID",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 600,
+        "autorun": false,
+        "command": "/home/pi/scripts/getssid.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getssid",
+      "thingTypeUID": "exec:command",
+      "location": "Network"
+    }
+  },
+  "exec:command:getsystemtype": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getsystemtype:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getsystemtype:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getsystemtype:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getsystemtype:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getsystemtype:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getsystemtype:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getsystemtype:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Get System Type",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 600,
+        "autorun": false,
+        "command": "/home/pi/scripts/getsystemtype.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getsystemtype",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:gettemp": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:gettemp:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettemp:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettemp:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettemp:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettemp:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettemp:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettemp:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Temperature Sensor",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "autorun": false,
+        "interval": 30,
+        "command": "/home/pi/scripts/getBMEtemp.sh",
+        "timeout": 5
+      },
+      "UID": "exec:command:gettemp",
+      "thingTypeUID": "exec:command",
+      "location": "Sensors"
+    }
+  },
+  "exec:command:gettempunit": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:gettempunit:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettempunit:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettempunit:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettempunit:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettempunit:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettempunit:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettempunit:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Temperature Unit",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "autorun": false,
+        "interval": 600,
+        "command": "/home/pi/scripts/gettempunit.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:gettempunit",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:gettz": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:gettz:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettz:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettz:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettz:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettz:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettz:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gettz:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Get Time Zone",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 3600,
+        "autorun": true,
+        "command": "/home/pi/scripts/gettz.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:gettz",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:getuptime": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getuptime:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuptime:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuptime:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuptime:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuptime:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuptime:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuptime:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "System Uptime",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 300,
+        "autorun": true,
+        "command": "/home/pi/scripts/getuptime.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getuptime",
+      "thingTypeUID": "exec:command",
+      "location": "System"
+    }
+  },
+  "exec:command:getuseddiskspace": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getuseddiskspace:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuseddiskspace:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuseddiskspace:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuseddiskspace:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuseddiskspace:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuseddiskspace:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getuseddiskspace:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Used Disk Space",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 600,
+        "autorun": true,
+        "command": "/home/pi/scripts/getuseddiskspace.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getuseddiskspace",
+      "thingTypeUID": "exec:command",
+      "location": "System"
+    }
+  },
+  "exec:command:getwifiinfo": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getwifiinfo:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwifiinfo:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwifiinfo:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwifiinfo:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwifiinfo:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwifiinfo:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwifiinfo:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "WiFi Info",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 600,
+        "autorun": false,
+        "command": "/home/pi/scripts/getwifiinfo.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getwifiinfo",
+      "thingTypeUID": "exec:command",
+      "location": "Network"
+    }
+  },
+  "exec:command:getwlanip": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getwlanip:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanip:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanip:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanip:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanip:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanip:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanip:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "WLAN IP",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 600,
+        "autorun": false,
+        "command": "/home/pi/scripts/getwlan0ip.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getwlanip",
+      "thingTypeUID": "exec:command",
+      "location": "Network"
+    }
+  },
+  "exec:command:getwlanmac": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:getwlanmac:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanmac:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanmac:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanmac:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanmac:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanmac:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:getwlanmac:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "WLAN MAC",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "autorun": false,
+        "interval": 600,
+        "command": "/home/pi/scripts/getwlan0mac.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:getwlanmac",
+      "thingTypeUID": "exec:command",
+      "location": "Network"
+    }
+  },
+  "exec:command:gitinstalled": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:gitinstalled:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitinstalled:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitinstalled:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitinstalled:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitinstalled:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitinstalled:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitinstalled:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Git Installed Version",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "/home/pi/scripts/getgitinstalledversion.sh",
+        "timeout": 15
+      },
+      "UID": "exec:command:gitinstalled",
+      "thingTypeUID": "exec:command",
+      "location": "System"
+    }
+  },
+  "exec:command:gitlatest": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:gitlatest:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitlatest:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitlatest:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitlatest:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitlatest:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitlatest:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:gitlatest:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Git Latest Version",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 604800,
+        "autorun": false,
+        "command": "sudo /home/pi/scripts/getgitlatestversion.sh",
+        "timeout": 15
+      },
+      "UID": "exec:command:gitlatest",
+      "thingTypeUID": "exec:command",
+      "location": "System"
+    }
+  },
+  "exec:command:pressure": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:pressure:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:pressure:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:pressure:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:pressure:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:pressure:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:pressure:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:pressure:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Barometric Pressure",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 60,
+        "autorun": false,
+        "command": "/home/pi/scripts/getBMEpress.sh",
+        "timeout": 5
+      },
+      "UID": "exec:command:pressure",
+      "thingTypeUID": "exec:command",
+      "location": "Sensors"
+    }
+  },
+  "exec:command:rebootcommand": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:rebootcommand:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:rebootcommand:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:rebootcommand:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:rebootcommand:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:rebootcommand:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:rebootcommand:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:rebootcommand:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Reboot",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "sudo /home/pi/scripts/reboot.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:rebootcommand",
+      "thingTypeUID": "exec:command",
+      "location": "Maintenance"
+    }
+  },
+  "exec:command:restorecommand": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:restorecommand:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:restorecommand:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:restorecommand:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:restorecommand:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:restorecommand:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:restorecommand:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:restorecommand:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Restore",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "sudo /home/pi/scripts/restore.sh &",
+        "timeout": 120
+      },
+      "UID": "exec:command:restorecommand",
+      "thingTypeUID": "exec:command",
+      "location": "Maintenance"
+    }
+  },
+  "exec:command:sethumitype": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:sethumitype:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:sethumitype:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:sethumitype:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:sethumitype:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:sethumitype:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:sethumitype:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:sethumitype:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Set Humidity Type",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "echo \"%2$s\" > /home/pi/scripts/humiditymode",
+        "timeout": 15
+      },
+      "UID": "exec:command:sethumitype",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:setsystemtype": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:setsystemtype:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setsystemtype:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setsystemtype:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setsystemtype:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setsystemtype:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setsystemtype:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setsystemtype:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Set SystemType",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "autorun": true,
+        "interval": 0,
+        "command": "echo \"%2$s\" > /home/pi/scripts/systemtype",
+        "timeout": 15
+      },
+      "UID": "exec:command:setsystemtype",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:settz": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:settz:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:settz:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:settz:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:settz:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:settz:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:settz:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:settz:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Set Timezone",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": true,
+        "command": "sudo /home/pi/scripts/settz.sh %2$s",
+        "timeout": 15
+      },
+      "UID": "exec:command:settz",
+      "thingTypeUID": "exec:command",
+      "location": "Settings"
+    }
+  },
+  "exec:command:shutdowncommand": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:shutdowncommand:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:shutdowncommand:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:shutdowncommand:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:shutdowncommand:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:shutdowncommand:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:shutdowncommand:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:shutdowncommand:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Shutdown",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "sudo /home/pi/scripts/shutdown.sh",
+        "timeout": 60
+      },
+      "UID": "exec:command:shutdowncommand",
+      "thingTypeUID": "exec:command",
+      "location": "Maintenance"
+    }
+  },
+  "exec:command:upgrade": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:upgrade:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:upgrade:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:upgrade:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:upgrade:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:upgrade:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:upgrade:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:upgrade:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Upgrade",
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "configuration": {
+        "transform": [
+          "REGEX((.*))"
+        ],
+        "interval": 0,
+        "autorun": false,
+        "command": "/home/pi/scripts/updateone.sh",
+        "timeout": 15
+      },
+      "UID": "exec:command:upgrade",
+      "thingTypeUID": "exec:command",
+      "location": "System"
+    }
+  },
+  "mqtt:broker:mosquitto": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": true,
+      "channels": [
+        {
+          "uid": "mqtt:broker:mosquitto:externaltemp",
+          "id": "externaltemp",
+          "channelTypeUID": "mqtt:publishTrigger",
+          "kind": "TRIGGER",
+          "label": "External Temperature",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "stateTopic": "hestia/external/+/temperature",
+            "separator": "#"
+          }
+        },
+        {
+          "uid": "mqtt:broker:mosquitto:externalhumi",
+          "id": "externalhumi",
+          "channelTypeUID": "mqtt:publishTrigger",
+          "kind": "TRIGGER",
+          "label": "External Humidity",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "stateTopic": "hestia/external/+/humidity",
+            "separator": "#"
+          }
+        }
+      ],
+      "label": "Mosquitto MQTT Broker",
+      "properties": {},
+      "configuration": {
+        "lwtQos": 0,
+        "publickeypin": true,
+        "clientID": "mosquitto",
+        "keepAlive": 60,
+        "secure": false,
+        "certificatepin": true,
+        "qos": 0,
+        "reconnectTime": 60000,
+        "port": 1883,
+        "host": "localhost",
+        "lwtRetain": true
+      },
+      "UID": "mqtt:broker:mosquitto",
+      "thingTypeUID": "mqtt:broker",
+      "location": "Settings"
+    }
+  },
+  "mqtt:topic:mosquitto:cooling": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:cooling:mode",
+          "id": "mode",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Cooling Mode",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/cmnd/coolingmode",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "stateTopic": "hestia/local/stat/coolingmode"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:cooling:control",
+          "id": "control",
+          "channelTypeUID": "mqtt:switch",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Cooling Switch",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "retained": false,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "commandTopic": "hestia/local/cmnd/coolingstate/POWER",
+            "stateTopic": "hestia/local/stat/coolingstate/power",
+            "off": "OFF",
+            "on": "ON"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:cooling:boost",
+          "id": "boost",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Cooling Boost Time",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/coolingboostremtime",
+            "retained": false,
+            "postCommand": false,
+            "step": 1.0,
+            "formatBeforePublish": "%s"
+          }
+        }
+      ],
+      "label": "Cooling Controls and Settings",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:cooling",
+      "thingTypeUID": "mqtt:topic",
+      "location": "Controls"
+    }
+  },
+  "mqtt:topic:mosquitto:fan": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:fan:mode",
+          "id": "mode",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Fan Mode",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/cmnd/fanmode",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "stateTopic": "hestia/local/stat/fanmode"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:fan:control",
+          "id": "control",
+          "channelTypeUID": "mqtt:switch",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Fan Switch",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "retained": false,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "commandTopic": "hestia/local/cmnd/fanstate/POWER",
+            "stateTopic": "hestia/local/stat/fanstate/power",
+            "off": "OFF",
+            "on": "ON"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:fan:boost",
+          "id": "boost",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Fan boost Time",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/fanboostremtime"
+          }
+        }
+      ],
+      "label": "Fan Controls and Settings",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:fan",
+      "thingTypeUID": "mqtt:topic",
+      "location": "Controls"
+    }
+  },
+  "mqtt:topic:mosquitto:heating": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:heating:mode",
+          "id": "mode",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Heating Mode",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/cmnd/heatingmode",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "stateTopic": "hestia/local/stat/heatingmode"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:heating:control",
+          "id": "control",
+          "channelTypeUID": "mqtt:switch",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Heating Switch",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "retained": false,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "commandTopic": "hestia/local/cmnd/heatingstate/POWER",
+            "stateTopic": "hestia/local/stat/heatingstate/power",
+            "off": "OFF",
+            "on": "ON"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:heating:control2",
+          "id": "control2",
+          "channelTypeUID": "mqtt:switch",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Heating2 Switch",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "retained": false,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "commandTopic": "hestia/local/cmnd/heating2state/POWER",
+            "stateTopic": "hestia/local/stat/heating2state/power",
+            "off": "OFF",
+            "on": "ON"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:heating:boost",
+          "id": "boost",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Heating Boost Time",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/heatingboostremtime",
+            "retained": false,
+            "postCommand": false,
+            "step": 1.0,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:heating:control3",
+          "id": "control3",
+          "channelTypeUID": "mqtt:switch",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Heating3 Switch",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/cmnd/heating3state/POWER",
+            "stateTopic": "hestia/local/stat/heating3state/power",
+            "off": "OFF",
+            "on": "ON"
+          }
+        }
+      ],
+      "label": "Heating Controls and Settings",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:heating",
+      "thingTypeUID": "mqtt:topic",
+      "location": "Controls"
+    }
+  },
+  "mqtt:topic:mosquitto:hotwater": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:hotwater:mode",
+          "id": "mode",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Hot Water Mode",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/cmnd/hotwatermode",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "stateTopic": "hestia/local/stat/hotwatermode"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:hotwater:control",
+          "id": "control",
+          "channelTypeUID": "mqtt:switch",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Hot Water Switch",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "retained": false,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "commandTopic": "hestia/local/cmnd/hotwaterstate/POWER",
+            "stateTopic": "hestia/local/stat/hotwaterstate/power",
+            "off": "OFF",
+            "on": "ON"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:hotwater:boost",
+          "id": "boost",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Hot Water Boost Time",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/hotwaterboostremtime",
+            "retained": false,
+            "postCommand": false,
+            "step": 1.0,
+            "formatBeforePublish": "%s"
+          }
+        }
+      ],
+      "label": "Hot Water Controls and Settings",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:hotwater",
+      "thingTypeUID": "mqtt:topic",
+      "location": "Controls"
+    }
+  },
+  "mqtt:topic:mosquitto:humidty": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:humidty:mode",
+          "id": "mode",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Humidity Mode",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/cmnd/humiditymode",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "stateTopic": "hestia/local/stat/humiditymode"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:humidty:control",
+          "id": "control",
+          "channelTypeUID": "mqtt:switch",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Humidity Switch",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "retained": false,
+            "postCommand": false,
+            "formatBeforePublish": "%s",
+            "commandTopic": "hestia/local/cmnd/humiditystate/POWER",
+            "stateTopic": "hestia/local/stat/humiditystate/power",
+            "off": "OFF",
+            "on": "ON"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:humidty:boost",
+          "id": "boost",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Humidity Boost Time",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/humidityboostremtime",
+            "retained": false,
+            "postCommand": false,
+            "step": 1.0,
+            "formatBeforePublish": "%s"
+          }
+        }
+      ],
+      "label": "Humidifier Dehumidifier Controls and Settings",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:humidty",
+      "thingTypeUID": "mqtt:topic",
+      "location": "Controls"
+    }
+  },
+  "mqtt:topic:mosquitto:networking": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:networking:wanip",
+          "id": "wanip",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "WAN IP",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/wanip",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:networking:wlanip",
+          "id": "wlanip",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "WLAN IP",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/wlanip",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:networking:ssid",
+          "id": "ssid",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "SSID",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/ssid",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:networking:wlaninfo",
+          "id": "wlaninfo",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "WLAN Info",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/wlaninfo",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:networking:wlanmac",
+          "id": "wlanmac",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "WLAN MAC",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/wlanmac",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        }
+      ],
+      "label": "Network Information",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:networking",
+      "thingTypeUID": "mqtt:topic",
+      "location": "Network"
+    }
+  },
+  "mqtt:topic:mosquitto:sensors": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:sensors:temperature",
+          "id": "temperature",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Current Temperature",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/temperature",
+            "retained": false,
+            "postCommand": false,
+            "step": 1.0,
+            "formatBeforePublish": "%.1f"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:sensors:humidity",
+          "id": "humidity",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Current Humidity",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/humidity",
+            "retained": false,
+            "postCommand": false,
+            "step": 1.0,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:sensors:humisetpoint",
+          "id": "humisetpoint",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Humidity Setpoint",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/humisetpoint",
+            "retained": true,
+            "postCommand": false,
+            "step": 1.0,
+            "formatBeforePublish": "%s",
+            "stateTopic": "hestia/local/sethumisetpoint"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:sensors:pressure",
+          "id": "pressure",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Pressure",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/pressure"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:sensors:maxtempsetpoint",
+          "id": "maxtempsetpoint",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Maximum Temperature Setpoint",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/maxtempsetpoint",
+            "stateTopic": "hestia/local/cmnd/setmaxtempsetpoint",
+            "retained": true
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:sensors:mintempsetpoint",
+          "id": "mintempsetpoint",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Minimum Temperature Setpoint",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/mintempsetpoint",
+            "stateTopic": "hestia/local/cmnd/setmintempsetpoint",
+            "retained": true
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:sensors:hysteresis",
+          "id": "hysteresis",
+          "channelTypeUID": "mqtt:number",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Hysteresis",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/hysteresis",
+            "stateTopic": "hestai/local/cmnd/hysteresis",
+            "retained": true
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:sensors:comfortmode",
+          "id": "comfortmode",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Comfort Mode",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/comfortmode",
+            "stateTopic": "hestia/local/cmnd/comfortmode",
+            "retained": true
+          }
+        }
+      ],
+      "label": "Sensors and Setpoints",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:sensors",
+      "thingTypeUID": "mqtt:topic",
+      "location": "Controls"
+    }
+  },
+  "mqtt:topic:mosquitto:system": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:system:cputemp",
+          "id": "cputemp",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "System CPU Temperature",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/cputemp",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:system:cpuload",
+          "id": "cpuload",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "System CPU Load",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/cpuload",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:system:space",
+          "id": "space",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "System Used Space",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/useddisk",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        }
+      ],
+      "label": "System Information",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:system",
+      "thingTypeUID": "mqtt:topic",
+      "location": "System"
+    }
+  },
+  "mqtt:topic:mosquitto:types": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "mqtt:topic:mosquitto:types:systype",
+          "id": "systype",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "System Type",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/systemtype",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        },
+        {
+          "uid": "mqtt:topic:mosquitto:types:tempunit",
+          "id": "tempunit",
+          "channelTypeUID": "mqtt:string",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Temp Unit",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {
+            "commandTopic": "hestia/local/tempunit",
+            "retained": true,
+            "postCommand": false,
+            "formatBeforePublish": "%s"
+          }
+        }
+      ],
+      "label": "System Configs",
+      "bridgeUID": "mqtt:broker:mosquitto",
+      "properties": {},
+      "configuration": {},
+      "UID": "mqtt:topic:mosquitto:types",
+      "thingTypeUID": "mqtt:topic",
+      "location": "Settings"
+    }
+  },
+  "exec:command:setpin12": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:setpin12:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin12:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin12:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin12:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin12:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin12:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin12:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Set GPIO Pin 12",
+      "configuration": {
+        "command": "/usr/bin/sudo /home/pi/scripts/hestia-setgpio.sh 12 %2$s",
+        "autorun": true,
+        "interval": 0,
+        "timeout": 5,
+        "transform": [
+          "REGEX((.*))"
+        ]
+      },
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "UID": "exec:command:setpin12",
+      "thingTypeUID": "exec:command",
+      "location": "GPIO"
+    }
+  },
+  "exec:command:setpin16": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:setpin16:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin16:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin16:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin16:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin16:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin16:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin16:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Set GPIO Pin 16",
+      "configuration": {
+        "command": "/usr/bin/sudo /home/pi/scripts/hestia-setgpio.sh 16 %2$s",
+        "autorun": true,
+        "interval": 0,
+        "timeout": 5,
+        "transform": [
+          "REGEX((.*))"
+        ]
+      },
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "UID": "exec:command:setpin16",
+      "thingTypeUID": "exec:command",
+      "location": "GPIO"
+    }
+  },
+  "exec:command:setpin18": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:setpin18:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin18:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin18:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin18:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin18:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin18:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin18:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Set GPIO Pin 18",
+      "configuration": {
+        "command": "/usr/bin/sudo /home/pi/scripts/hestia-setgpio.sh 18 %2$s",
+        "autorun": true,
+        "interval": 0,
+        "timeout": 5,
+        "transform": [
+          "REGEX((.*))"
+        ]
+      },
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "UID": "exec:command:setpin18",
+      "thingTypeUID": "exec:command",
+      "location": "GPIO"
+    }
+  },
+  "exec:command:setpin23": {
+    "class": "org.openhab.core.thing.internal.ThingStorageEntity",
+    "value": {
+      "isBridge": false,
+      "channels": [
+        {
+          "uid": "exec:command:setpin23:output",
+          "id": "output",
+          "channelTypeUID": "exec:output",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Output",
+          "description": "Output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin23:stdout",
+          "id": "stdout",
+          "channelTypeUID": "exec:stdout",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Out",
+          "description": "The stdout output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin23:stderr",
+          "id": "stderr",
+          "channelTypeUID": "exec:stderr",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Standard Error",
+          "description": "The stderr output of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin23:input",
+          "id": "input",
+          "channelTypeUID": "exec:input",
+          "itemType": "String",
+          "kind": "STATE",
+          "label": "Input",
+          "description": "Input that will be passed as second parameter to the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin23:exit",
+          "id": "exit",
+          "channelTypeUID": "exec:exit",
+          "itemType": "Number",
+          "kind": "STATE",
+          "label": "Exit Value",
+          "description": "The exit value of the last execution of the command",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin23:run",
+          "id": "run",
+          "channelTypeUID": "exec:run",
+          "itemType": "Switch",
+          "kind": "STATE",
+          "label": "Running",
+          "description": "Send ON to execute the command and the current state tells whether it is running or not",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        },
+        {
+          "uid": "exec:command:setpin23:lastexecution",
+          "id": "lastexecution",
+          "channelTypeUID": "exec:lastexecution",
+          "itemType": "DateTime",
+          "kind": "STATE",
+          "label": "Last Execution",
+          "description": "Time/Date the command was last executed, in yyyy-MM-dd'T'HH:mm:ss.SSSZ format",
+          "defaultTags": [],
+          "properties": {},
+          "configuration": {}
+        }
+      ],
+      "label": "Set GPIO Pin 23",
+      "configuration": {
+        "command": "/usr/bin/sudo /home/pi/scripts/hestia-setgpio.sh 23 %2$s",
+        "autorun": true,
+        "interval": 0,
+        "timeout": 5,
+        "transform": [
+          "REGEX((.*))"
+        ]
+      },
+      "properties": {
+        "thingTypeVersion": "1"
+      },
+      "UID": "exec:command:setpin23",
+      "thingTypeUID": "exec:command",
+      "location": "GPIO"
+    }
+  }
+}

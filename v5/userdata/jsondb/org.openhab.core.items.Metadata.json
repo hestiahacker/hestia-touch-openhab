@@ -1,0 +1,282 @@
+{
+  "autoupdate:CoolingMode": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "CoolingMode"
+        ],
+        "uid": "autoupdate:CoolingMode"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:CoolingRemBoostTime": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "CoolingRemBoostTime"
+        ],
+        "uid": "autoupdate:CoolingRemBoostTime"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:FanMode": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "FanMode"
+        ],
+        "uid": "autoupdate:FanMode"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HeatingMode": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HeatingMode"
+        ],
+        "uid": "autoupdate:HeatingMode"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HeatingRemBoostTime": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HeatingRemBoostTime"
+        ],
+        "uid": "autoupdate:HeatingRemBoostTime"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HotWaterMode": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HotWaterMode"
+        ],
+        "uid": "autoupdate:HotWaterMode"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HotWaterRemBoostTime": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HotWaterRemBoostTime"
+        ],
+        "uid": "autoupdate:HotWaterRemBoostTime"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HumiSetpoint": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HumiSetpoint"
+        ],
+        "uid": "autoupdate:HumiSetpoint"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HumidityMode": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HumidityMode"
+        ],
+        "uid": "autoupdate:HumidityMode"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:HumidityRemBoostTime": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "HumidityRemBoostTime"
+        ],
+        "uid": "autoupdate:HumidityRemBoostTime"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:MaxTempSetpoint": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "MaxTempSetpoint"
+        ],
+        "uid": "autoupdate:MaxTempSetpoint"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:MaxTempSetpointC": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "MaxTempSetpointC"
+        ],
+        "uid": "autoupdate:MaxTempSetpointC"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:MaxTempSetpointF": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "MaxTempSetpointF"
+        ],
+        "uid": "autoupdate:MaxTempSetpointF"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:MinTempSetpoint": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "MinTempSetpoint"
+        ],
+        "uid": "autoupdate:MinTempSetpoint"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:MinTempSetpointC": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "MinTempSetpointC"
+        ],
+        "uid": "autoupdate:MinTempSetpointC"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:MinTempSetpointF": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "MinTempSetpointF"
+        ],
+        "uid": "autoupdate:MinTempSetpointF"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:Pin12": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "Pin12"
+        ],
+        "uid": "autoupdate:Pin12"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:Pin16": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "Pin16"
+        ],
+        "uid": "autoupdate:Pin16"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:Pin18": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "Pin18"
+        ],
+        "uid": "autoupdate:Pin18"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  },
+  "autoupdate:Pin23": {
+    "class": "org.openhab.core.items.Metadata",
+    "value": {
+      "key": {
+        "segments": [
+          "autoupdate",
+          "Pin23"
+        ],
+        "uid": "autoupdate:Pin23"
+      },
+      "value": "true",
+      "configuration": {}
+    }
+  }
+}

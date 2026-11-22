@@ -1,0 +1,1550 @@
+{
+  "BackupButton": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Backup [%s]",
+      "category": "none"
+    }
+  },
+  "BackupCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Backup",
+      "category": "none"
+    }
+  },
+  "BackupTimestampCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Last Backup [%s]",
+      "category": "calendar"
+    }
+  },
+  "BackupTimestampResults": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Backup Timestamp [%s]",
+      "category": "calendar"
+    }
+  },
+  "BoostTimes": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "baseItemType": "Number",
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Boost Times",
+      "category": "time",
+      "functionName": "MAX"
+    }
+  },
+  "Buttons": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "UI Buttons",
+      "category": "wallswitch"
+    }
+  },
+  "C2FCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "C to F Temp Unit",
+      "category": "switch"
+    }
+  },
+  "CPUTemperatureCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get CPU Temperature",
+      "category": "switch"
+    }
+  },
+  "Comfort_Mode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Comfort Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "Comfort_Value": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Comfort Value [%.1f]",
+      "category": "temperature"
+    }
+  },
+  "CoolingBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "BoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Cooling Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "CoolingBoostTimer": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Cooling Boost Timer Exists",
+      "category": "switch"
+    }
+  },
+  "CoolingCheck": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Determines the AC state",
+      "category": "switch"
+    }
+  },
+  "CoolingCtrl": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Control cooling",
+      "category": "switch"
+    }
+  },
+  "CoolingMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Modes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Cooling Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "CoolingPin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Cooling",
+      "category": "climate"
+    }
+  },
+  "CoolingPrevMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "PrevModes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Cooling Previous Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "CoolingRemBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "RemBoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Cooling Remaining Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "ExternalHumiMax": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "External Max Humidity [%.0f %%]",
+      "category": "humidity"
+    }
+  },
+  "ExternalHumiMin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "External Min Humidity [%.0f %%]",
+      "category": "humidity"
+    }
+  },
+  "ExternalTempMax": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "External Max Temperature [%.0f °]",
+      "category": "temperature"
+    }
+  },
+  "ExternalTempMin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "External Min Temperature [%.0f °]",
+      "category": "temperature"
+    }
+  },
+  "F2CCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "F to C Temp Unit",
+      "category": "switch"
+    }
+  },
+  "FanBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "BoostTimes",
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Fan Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "FanBoostTimer": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Fan Boost Timer Exists",
+      "category": "switch"
+    }
+  },
+  "FanCheck": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Determines the fan state",
+      "category": "switch"
+    }
+  },
+  "FanCtrl": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Enable Fan Controls"
+    }
+  },
+  "FanMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Modes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Fan Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "FanModeCtrl": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Control the fan",
+      "category": "switch"
+    }
+  },
+  "FanPin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Fan",
+      "category": "fan"
+    }
+  },
+  "FanPrevMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "PrevModes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Fan Previous Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "FanRemBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "RemBoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Fan Remaining Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "GetHumidityMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get Humidity Mode",
+      "category": "switch"
+    }
+  },
+  "GetSystemType": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get System Type",
+      "category": "switch"
+    }
+  },
+  "GetTemp": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get current temperature",
+      "category": "switch"
+    }
+  },
+  "GetTempUnit": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get TempUnit",
+      "category": "switch"
+    }
+  },
+  "GitInstallLatestVersion": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Update & restart [%s]",
+      "category": "returnpipe"
+    }
+  },
+  "GitInstalledVersion": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Installed version [%s]",
+      "category": "shield"
+    }
+  },
+  "GitInstalledVersionCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get the currently running version",
+      "category": "switch"
+    }
+  },
+  "GitLatestVersion": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Latest version [%s]",
+      "category": "returnpipe"
+    }
+  },
+  "GitLatestVersionCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Get latest version",
+      "category": "switch"
+    }
+  },
+  "Heating2": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "2nd Stage Heating [%s]",
+      "category": "heating"
+    }
+  },
+  "Heating2Delta": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "2nd stage threshold [%.1f °]",
+      "category": "temperature"
+    }
+  },
+  "Heating2InitialTemp": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "2nd Stage Heating Initial Temp [%.1f]",
+      "category": "temperature"
+    }
+  },
+  "Heating2Pin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Heating2",
+      "category": "fire"
+    }
+  },
+  "Heating2Time": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Delay [%.0f min]",
+      "category": "time"
+    }
+  },
+  "Heating3": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "3rd Stage Heating [%s]",
+      "category": "heating"
+    }
+  },
+  "Heating3Delta": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "e-heat threshold [%.1f °]",
+      "category": "temperature"
+    }
+  },
+  "Heating3Pin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Heating3",
+      "category": "fire"
+    }
+  },
+  "HeatingBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "BoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Heating Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "HeatingBoostTimer": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Heating Boost Timer Exists",
+      "category": "switch"
+    }
+  },
+  "HeatingCheck": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Determines the heater state",
+      "category": "switch"
+    }
+  },
+  "HeatingCtrl": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Control heating",
+      "category": "switch"
+    }
+  },
+  "HeatingMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Modes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Heating Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "HeatingPin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Heating",
+      "category": "fire"
+    }
+  },
+  "HeatingPrevMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "PrevModes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Heating Previous Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "HeatingRemBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "RemBoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Heating Remaining Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "HotWaterBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "BoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Hot Water Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "HotWaterBoostTimer": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Hot Water Boost Timer Exists",
+      "category": "switch"
+    }
+  },
+  "HotWaterCheck": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Determine Hot Water state",
+      "category": "switch"
+    }
+  },
+  "HotWaterCtrl": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Control hot water",
+      "category": "switch"
+    }
+  },
+  "HotWaterMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Modes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Hot Water Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "HotWaterPin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Hot Water",
+      "category": "water"
+    }
+  },
+  "HotWaterPrevMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "PrevModes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Hot Water Previous Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "HotWaterRemBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "RemBoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Hot Water Remaining Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "HumiSetpoint": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Humidity Setpoint [%.0f %%]",
+      "category": "humidity"
+    }
+  },
+  "HumidityBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "BoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Humidity Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "HumidityBoostTimer": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Humidity Boost Timer Exists",
+      "category": "switch"
+    }
+  },
+  "HumidityCheck": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Determines the humidifier/dehumidifer state",
+      "category": "switch"
+    }
+  },
+  "HumidityCtrl": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Control humidifier/dehumidifier",
+      "category": "switch"
+    }
+  },
+  "HumidityMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Modes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Humidity Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "HumidityPin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Humidity",
+      "category": "flow"
+    }
+  },
+  "HumidityPrevMode": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "PrevModes"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Humidity Previous Mode [%s]",
+      "category": "heating"
+    }
+  },
+  "HumidityRemBoostTime": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "RemBoostTimes"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Humidity Remaining Boost Time [%.0f min]",
+      "category": "time"
+    }
+  },
+  "HumidityType": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Humidity Mode [%s]",
+      "category": "water"
+    }
+  },
+  "Initialized": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Initialized",
+      "category": "switch"
+    }
+  },
+  "MainSwitch": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Main Switch"
+    }
+  },
+  "MaxTempSetpoint": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Proxy Maximum Temperature Setpoint [%.1f °]",
+      "category": "temperature"
+    }
+  },
+  "MaxTempSetpointC": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Maximum Temperature Setpoint [%.1f °C]",
+      "category": "temperature"
+    }
+  },
+  "MaxTempSetpointF": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Maximum Temperature Setpoint [%.0f °F]",
+      "category": "temperature"
+    }
+  },
+  "MinTempSetpoint": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Proxy Minimum Temperature Setpoint [%.1f °]",
+      "category": "temperature"
+    }
+  },
+  "MinTempSetpointC": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Minimum Temperature Setpoint [%.1f °C]",
+      "category": "temperature"
+    }
+  },
+  "MinTempSetpointF": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup",
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Minimum Temperature Setpoint [%.0f °F]",
+      "category": "temperature"
+    }
+  },
+  "Modes": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Modes",
+      "category": "none"
+    }
+  },
+  "MyHumi": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Humidity",
+      "category": "humidity"
+    }
+  },
+  "MyHumiProxy": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Humidity [%.0f %%]",
+      "category": "humidity"
+    }
+  },
+  "MyPressure": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Sensors"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Pressure",
+      "category": "pressure"
+    }
+  },
+  "MyPressureProxy": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Pressure [%.2f hPa]",
+      "category": "pressure"
+    }
+  },
+  "MyTemp": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Sensors"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Temperature",
+      "category": "temperature"
+    }
+  },
+  "MyTempProxy": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Current Temperature",
+      "category": "temperature"
+    }
+  },
+  "MyTempProxyC": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Temperature [%.1f °C]",
+      "category": "temperature"
+    }
+  },
+  "MyTempProxyF": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Proxies"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Temperature [%.0f °F]",
+      "category": "temperature"
+    }
+  },
+  "Network": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Network Items",
+      "category": "network"
+    }
+  },
+  "Network_SSID": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Network"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "WiFi SSID",
+      "category": "network"
+    }
+  },
+  "Network_WAN_IP": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Network"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Public IP [%s]",
+      "category": "zoom"
+    }
+  },
+  "Network_WLAN_INFO": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Network"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "WiFi Signal [%s %%]",
+      "category": "line"
+    }
+  },
+  "Network_WLAN_IP": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Local IP [%s]",
+      "category": "house"
+    }
+  },
+  "Network_WLAN_MAC": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Network"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "WiFi MAC Address [%s]",
+      "category": "network"
+    }
+  },
+  "Pin12off": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin12on": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin16off": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin16on": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin18off": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin18on": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": ""
+    }
+  },
+  "Pin20": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin20off": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin20on": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin23off": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin23on": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pins": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Pins",
+      "category": "none"
+    }
+  },
+  "PrevModes": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Previous Modes",
+      "category": "none"
+    }
+  },
+  "PreviousHumiReading": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Previous Humidity [%.0f %%]",
+      "category": "humidity"
+    }
+  },
+  "PreviousPressureReading": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Previous Pressure",
+      "category": "pressure"
+    }
+  },
+  "PreviousTempReading": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "Number",
+      "tags": [],
+      "label": "Previous Temperature [%.1f °]",
+      "category": "temperature"
+    }
+  },
+  "Proxies": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Proxies",
+      "category": "none"
+    }
+  },
+  "RebootButton": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Buttons"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Reboot",
+      "category": "switch"
+    }
+  },
+  "RebootCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Reboot"
+    }
+  },
+  "RemBoostTimes": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "baseItemType": "Number",
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Remaining Boost Times",
+      "category": "time",
+      "functionName": "MAX"
+    }
+  },
+  "RestoreButton": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Restore [%s]",
+      "category": "switch"
+    }
+  },
+  "RestoreCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Restore",
+      "category": "switch"
+    }
+  },
+  "RestoreOnStartup": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Restore on Startup",
+      "category": "none"
+    }
+  },
+  "Sensors": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Group",
+      "tags": [],
+      "label": "Sensors",
+      "category": "none"
+    }
+  },
+  "ShutdownButton": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Buttons"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Shutdown",
+      "category": "switch"
+    }
+  },
+  "ShutdownCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Shutdown"
+    }
+  },
+  "Stage2Pin": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": [],
+      "category": "heating"
+    }
+  },
+  "StartInitialization": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Start Initialization",
+      "category": "switch"
+    }
+  },
+  "SystemType": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "System Type [%s]",
+      "category": "pump"
+    }
+  },
+  "System_CPU_LOAD": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "CPU Load [%s %%]",
+      "category": "line"
+    }
+  },
+  "System_CPU_TEMP": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "CPU Temp [%s]",
+      "category": "temperature"
+    }
+  },
+  "System_CPU_UPTIME": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Uptime [%s]",
+      "category": "status"
+    }
+  },
+  "System_TZ": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Timezone [%s]",
+      "category": "time"
+    }
+  },
+  "System_TZ_Set": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Timezone [%s]",
+      "category": "time"
+    }
+  },
+  "System_Used_Space": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "String",
+      "tags": [],
+      "label": "Used Disk [%s]",
+      "category": "pie"
+    }
+  },
+  "TempUnit": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "RestoreOnStartup"
+      ],
+      "itemType": "String",
+      "tags": [],
+      "label": "Temperature Unit [%s]",
+      "category": "temperature"
+    }
+  },
+  "UpgradeCommand": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [],
+      "itemType": "Switch",
+      "tags": [],
+      "label": "Upgrade",
+      "category": "switch"
+    }
+  },
+  "Pin12": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin16": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin18": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  },
+  "Pin23": {
+    "class": "org.openhab.core.items.ManagedItemProvider$PersistedItem",
+    "value": {
+      "groupNames": [
+        "Pins"
+      ],
+      "itemType": "Switch",
+      "tags": []
+    }
+  }
+}

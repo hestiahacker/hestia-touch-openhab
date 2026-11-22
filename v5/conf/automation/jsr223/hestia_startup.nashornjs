@@ -1,0 +1,24 @@
+// openHAB 5 installs the Nashorn add-on while it is starting, so the first
+// "System started" event can arrive before this script engine exists.  File
+// scripts are only loaded after their engine is available, which makes this
+// the deterministic place to kick off initialization.
+var OPENHAB_CONF = Java.type('java.lang.System').getenv('OPENHAB_CONF');
+load(OPENHAB_CONF + '/automation/lib/hestia/utils.js');
+
+var logName = "initialization.kickoff";
+var attempts = 0;
+
+var kick = function() {
+  if (items["Initialized"] == ON || items["Initialized"] == OFF) {
+    logDebug(logName, "Initialization already handled, Initialized == " + items["Initialized"]);
+    return;
+  }
+  logInfo(logName, "Nashorn is ready, commanding Initialization Rule to start");
+  events.sendCommand("StartInitialization", ON);
+  attempts++;
+  if (attempts < 12) {
+    createTimerSecs(5, kick);
+  }
+};
+
+createTimerSecs(2, kick);

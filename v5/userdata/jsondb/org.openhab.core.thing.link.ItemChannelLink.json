@@ -1,0 +1,1761 @@
+{
+  "BackupCommand -> exec:command:backupcommand:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "backupcommand",
+          "run"
+        ],
+        "uid": "exec:command:backupcommand:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "BackupCommand"
+    }
+  },
+  "BackupTimestampCommand -> exec:command:getbackuptimestampcommand:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getbackuptimestampcommand",
+          "run"
+        ],
+        "uid": "exec:command:getbackuptimestampcommand:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "BackupTimestampCommand"
+    }
+  },
+  "BackupTimestampResults -> exec:command:getbackuptimestampcommand:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getbackuptimestampcommand",
+          "output"
+        ],
+        "uid": "exec:command:getbackuptimestampcommand:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "BackupTimestampResults"
+    }
+  },
+  "C2FCommand -> exec:command:c2f:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "c2f",
+          "run"
+        ],
+        "uid": "exec:command:c2f:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "C2FCommand"
+    }
+  },
+  "CPUTemperatureCommand -> exec:command:getcputemperature:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getcputemperature",
+          "run"
+        ],
+        "uid": "exec:command:getcputemperature:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "CPUTemperatureCommand"
+    }
+  },
+  "Comfort_Mode -> mqtt:topic:mosquitto:sensors:comfortmode": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "sensors",
+          "comfortmode"
+        ],
+        "uid": "mqtt:topic:mosquitto:sensors:comfortmode"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Comfort_Mode"
+    }
+  },
+  "Comfort_Value -> mqtt:topic:mosquitto:sensors:hysteresis": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "sensors",
+          "hysteresis"
+        ],
+        "uid": "mqtt:topic:mosquitto:sensors:hysteresis"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Comfort_Value"
+    }
+  },
+  "CoolingMode -> mqtt:topic:mosquitto:cooling:mode": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "cooling",
+          "mode"
+        ],
+        "uid": "mqtt:topic:mosquitto:cooling:mode"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "CoolingMode"
+    }
+  },
+  "CoolingPin -> mqtt:topic:mosquitto:cooling:control": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "cooling",
+          "control"
+        ],
+        "uid": "mqtt:topic:mosquitto:cooling:control"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "CoolingPin"
+    }
+  },
+  "CoolingRemBoostTime -> mqtt:topic:mosquitto:cooling:boost": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "cooling",
+          "boost"
+        ],
+        "uid": "mqtt:topic:mosquitto:cooling:boost"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "CoolingRemBoostTime"
+    }
+  },
+  "F2CCommand -> exec:command:f2c:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "f2c",
+          "run"
+        ],
+        "uid": "exec:command:f2c:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "F2CCommand"
+    }
+  },
+  "FanMode -> mqtt:topic:mosquitto:fan:mode": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "fan",
+          "mode"
+        ],
+        "uid": "mqtt:topic:mosquitto:fan:mode"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "FanMode"
+    }
+  },
+  "FanPin -> mqtt:topic:mosquitto:fan:control": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "fan",
+          "control"
+        ],
+        "uid": "mqtt:topic:mosquitto:fan:control"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "FanPin"
+    }
+  },
+  "FanRemBoostTime -> mqtt:topic:mosquitto:fan:boost": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "fan",
+          "boost"
+        ],
+        "uid": "mqtt:topic:mosquitto:fan:boost"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "FanRemBoostTime"
+    }
+  },
+  "GetHumidityMode -> exec:command:gethumiditymode:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gethumiditymode",
+          "run"
+        ],
+        "uid": "exec:command:gethumiditymode:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "GetHumidityMode"
+    }
+  },
+  "GetSystemType -> exec:command:getsystemtype:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getsystemtype",
+          "run"
+        ],
+        "uid": "exec:command:getsystemtype:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "GetSystemType"
+    }
+  },
+  "GetTemp -> exec:command:gettemp:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gettemp",
+          "run"
+        ],
+        "uid": "exec:command:gettemp:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "GetTemp"
+    }
+  },
+  "GetTempUnit -> exec:command:gettempunit:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gettempunit",
+          "run"
+        ],
+        "uid": "exec:command:gettempunit:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "GetTempUnit"
+    }
+  },
+  "GitInstalledVersion -> exec:command:gitinstalled:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gitinstalled",
+          "output"
+        ],
+        "uid": "exec:command:gitinstalled:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "GitInstalledVersion"
+    }
+  },
+  "GitInstalledVersionCommand -> exec:command:gitinstalled:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gitinstalled",
+          "run"
+        ],
+        "uid": "exec:command:gitinstalled:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "GitInstalledVersionCommand"
+    }
+  },
+  "GitLatestVersion -> exec:command:gitlatest:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gitlatest",
+          "output"
+        ],
+        "uid": "exec:command:gitlatest:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "GitLatestVersion"
+    }
+  },
+  "GitLatestVersionCommand -> exec:command:gitlatest:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gitlatest",
+          "run"
+        ],
+        "uid": "exec:command:gitlatest:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "GitLatestVersionCommand"
+    }
+  },
+  "Heating2Pin -> mqtt:topic:mosquitto:heating:control2": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "heating",
+          "control2"
+        ],
+        "uid": "mqtt:topic:mosquitto:heating:control2"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Heating2Pin"
+    }
+  },
+  "Heating3Pin -> mqtt:topic:mosquitto:heating:control3": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "heating",
+          "control3"
+        ],
+        "uid": "mqtt:topic:mosquitto:heating:control3"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Heating3Pin"
+    }
+  },
+  "HeatingMode -> mqtt:topic:mosquitto:heating:mode": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "heating",
+          "mode"
+        ],
+        "uid": "mqtt:topic:mosquitto:heating:mode"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HeatingMode"
+    }
+  },
+  "HeatingPin -> mqtt:topic:mosquitto:heating:control": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "heating",
+          "control"
+        ],
+        "uid": "mqtt:topic:mosquitto:heating:control"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HeatingPin"
+    }
+  },
+  "HeatingRemBoostTime -> mqtt:topic:mosquitto:heating:boost": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "heating",
+          "boost"
+        ],
+        "uid": "mqtt:topic:mosquitto:heating:boost"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HeatingRemBoostTime"
+    }
+  },
+  "HotWaterMode -> mqtt:topic:mosquitto:hotwater:mode": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "hotwater",
+          "mode"
+        ],
+        "uid": "mqtt:topic:mosquitto:hotwater:mode"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HotWaterMode"
+    }
+  },
+  "HotWaterPin -> mqtt:topic:mosquitto:hotwater:control": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "hotwater",
+          "control"
+        ],
+        "uid": "mqtt:topic:mosquitto:hotwater:control"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HotWaterPin"
+    }
+  },
+  "HotWaterRemBoostTime -> mqtt:topic:mosquitto:hotwater:boost": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "hotwater",
+          "boost"
+        ],
+        "uid": "mqtt:topic:mosquitto:hotwater:boost"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HotWaterRemBoostTime"
+    }
+  },
+  "HumiSetpoint -> mqtt:topic:mosquitto:sensors:humisetpoint": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "sensors",
+          "humisetpoint"
+        ],
+        "uid": "mqtt:topic:mosquitto:sensors:humisetpoint"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HumiSetpoint"
+    }
+  },
+  "HumidityMode -> mqtt:topic:mosquitto:humidty:mode": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "humidty",
+          "mode"
+        ],
+        "uid": "mqtt:topic:mosquitto:humidty:mode"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HumidityMode"
+    }
+  },
+  "HumidityPin -> mqtt:topic:mosquitto:humidty:control": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "humidty",
+          "control"
+        ],
+        "uid": "mqtt:topic:mosquitto:humidty:control"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HumidityPin"
+    }
+  },
+  "HumidityRemBoostTime -> mqtt:topic:mosquitto:humidty:boost": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "humidty",
+          "boost"
+        ],
+        "uid": "mqtt:topic:mosquitto:humidty:boost"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HumidityRemBoostTime"
+    }
+  },
+  "HumidityType -> exec:command:gethumiditymode:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gethumiditymode",
+          "output"
+        ],
+        "uid": "exec:command:gethumiditymode:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HumidityType"
+    }
+  },
+  "HumidityType -> exec:command:sethumitype:input": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "sethumitype",
+          "input"
+        ],
+        "uid": "exec:command:sethumitype:input"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "HumidityType"
+    }
+  },
+  "MaxTempSetpoint -> mqtt:topic:mosquitto:sensors:maxtempsetpoint": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "sensors",
+          "maxtempsetpoint"
+        ],
+        "uid": "mqtt:topic:mosquitto:sensors:maxtempsetpoint"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "MaxTempSetpoint"
+    }
+  },
+  "MinTempSetpoint -> mqtt:topic:mosquitto:sensors:mintempsetpoint": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "sensors",
+          "mintempsetpoint"
+        ],
+        "uid": "mqtt:topic:mosquitto:sensors:mintempsetpoint"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "MinTempSetpoint"
+    }
+  },
+  "MyHumi -> exec:command:gethumi:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gethumi",
+          "output"
+        ],
+        "uid": "exec:command:gethumi:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "MyHumi"
+    }
+  },
+  "MyHumiProxy -> mqtt:topic:mosquitto:sensors:humidity": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "sensors",
+          "humidity"
+        ],
+        "uid": "mqtt:topic:mosquitto:sensors:humidity"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "MyHumiProxy"
+    }
+  },
+  "MyPressure -> exec:command:pressure:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "pressure",
+          "output"
+        ],
+        "uid": "exec:command:pressure:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "MyPressure"
+    }
+  },
+  "MyPressureProxy -> mqtt:topic:mosquitto:sensors:pressure": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "sensors",
+          "pressure"
+        ],
+        "uid": "mqtt:topic:mosquitto:sensors:pressure"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "MyPressureProxy"
+    }
+  },
+  "MyTemp -> exec:command:gettemp:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gettemp",
+          "output"
+        ],
+        "uid": "exec:command:gettemp:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "MyTemp"
+    }
+  },
+  "MyTempProxy -> mqtt:topic:mosquitto:sensors:temperature": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "sensors",
+          "temperature"
+        ],
+        "uid": "mqtt:topic:mosquitto:sensors:temperature"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "MyTempProxy"
+    }
+  },
+  "Network_SSID -> exec:command:getssid:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getssid",
+          "output"
+        ],
+        "uid": "exec:command:getssid:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Network_SSID"
+    }
+  },
+  "Network_SSID -> mqtt:topic:mosquitto:networking:ssid": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "networking",
+          "ssid"
+        ],
+        "uid": "mqtt:topic:mosquitto:networking:ssid"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "Network_SSID"
+    }
+  },
+  "Network_WAN_IP -> exec:command:getpublicip:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getpublicip",
+          "output"
+        ],
+        "uid": "exec:command:getpublicip:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Network_WAN_IP"
+    }
+  },
+  "Network_WAN_IP -> mqtt:topic:mosquitto:networking:wanip": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "networking",
+          "wanip"
+        ],
+        "uid": "mqtt:topic:mosquitto:networking:wanip"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "Network_WAN_IP"
+    }
+  },
+  "Network_WLAN_INFO -> exec:command:getwifiinfo:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getwifiinfo",
+          "output"
+        ],
+        "uid": "exec:command:getwifiinfo:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Network_WLAN_INFO"
+    }
+  },
+  "Network_WLAN_INFO -> mqtt:topic:mosquitto:networking:wlaninfo": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "networking",
+          "wlaninfo"
+        ],
+        "uid": "mqtt:topic:mosquitto:networking:wlaninfo"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "Network_WLAN_INFO"
+    }
+  },
+  "Network_WLAN_IP -> exec:command:getwlanip:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getwlanip",
+          "output"
+        ],
+        "uid": "exec:command:getwlanip:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Network_WLAN_IP"
+    }
+  },
+  "Network_WLAN_IP -> mqtt:topic:mosquitto:networking:wlanip": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "networking",
+          "wlanip"
+        ],
+        "uid": "mqtt:topic:mosquitto:networking:wlanip"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "Network_WLAN_IP"
+    }
+  },
+  "Network_WLAN_MAC -> exec:command:getwlanmac:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getwlanmac",
+          "output"
+        ],
+        "uid": "exec:command:getwlanmac:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Network_WLAN_MAC"
+    }
+  },
+  "Network_WLAN_MAC -> mqtt:topic:mosquitto:networking:wlanmac": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "networking",
+          "wlanmac"
+        ],
+        "uid": "mqtt:topic:mosquitto:networking:wlanmac"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "Network_WLAN_MAC"
+    }
+  },
+  "Pin12off -> exec:command:c9b8ec24:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "c9b8ec24",
+          "run"
+        ],
+        "uid": "exec:command:c9b8ec24:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin12off"
+    }
+  },
+  "Pin12on -> exec:command:e264ceac:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "e264ceac",
+          "run"
+        ],
+        "uid": "exec:command:e264ceac:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin12on"
+    }
+  },
+  "Pin16off -> exec:command:ea48ffb7:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "ea48ffb7",
+          "run"
+        ],
+        "uid": "exec:command:ea48ffb7:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin16off"
+    }
+  },
+  "Pin16on -> exec:command:2d1db4f3:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "2d1db4f3",
+          "run"
+        ],
+        "uid": "exec:command:2d1db4f3:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin16on"
+    }
+  },
+  "Pin18off -> exec:command:c325b5e8:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "c325b5e8",
+          "run"
+        ],
+        "uid": "exec:command:c325b5e8:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin18off"
+    }
+  },
+  "Pin18on -> exec:command:cdd050a4:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "cdd050a4",
+          "run"
+        ],
+        "uid": "exec:command:cdd050a4:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin18on"
+    }
+  },
+  "Pin20off -> exec:command:b4e7cbd5:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "b4e7cbd5",
+          "run"
+        ],
+        "uid": "exec:command:b4e7cbd5:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin20off"
+    }
+  },
+  "Pin20on -> exec:command:bd4e058c:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "bd4e058c",
+          "run"
+        ],
+        "uid": "exec:command:bd4e058c:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin20on"
+    }
+  },
+  "Pin23off -> exec:command:de3288c7:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "de3288c7",
+          "run"
+        ],
+        "uid": "exec:command:de3288c7:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin23off"
+    }
+  },
+  "Pin23on -> exec:command:5a54c0be:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "5a54c0be",
+          "run"
+        ],
+        "uid": "exec:command:5a54c0be:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "Pin23on"
+    }
+  },
+  "RebootCommand -> exec:command:rebootcommand:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "rebootcommand",
+          "run"
+        ],
+        "uid": "exec:command:rebootcommand:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "RebootCommand"
+    }
+  },
+  "RestoreCommand -> exec:command:restorecommand:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "restorecommand",
+          "run"
+        ],
+        "uid": "exec:command:restorecommand:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "RestoreCommand"
+    }
+  },
+  "ShutdownCommand -> exec:command:shutdowncommand:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "shutdowncommand",
+          "run"
+        ],
+        "uid": "exec:command:shutdowncommand:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "ShutdownCommand"
+    }
+  },
+  "SystemType -> exec:command:getsystemtype:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getsystemtype",
+          "output"
+        ],
+        "uid": "exec:command:getsystemtype:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "SystemType"
+    }
+  },
+  "SystemType -> exec:command:setsystemtype:input": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "setsystemtype",
+          "input"
+        ],
+        "uid": "exec:command:setsystemtype:input"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "SystemType"
+    }
+  },
+  "SystemType -> mqtt:topic:mosquitto:types:systype": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "types",
+          "systype"
+        ],
+        "uid": "mqtt:topic:mosquitto:types:systype"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "SystemType"
+    }
+  },
+  "System_CPU_LOAD -> exec:command:getcpuload:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getcpuload",
+          "output"
+        ],
+        "uid": "exec:command:getcpuload:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "System_CPU_LOAD"
+    }
+  },
+  "System_CPU_LOAD -> mqtt:topic:mosquitto:system:cpuload": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "system",
+          "cpuload"
+        ],
+        "uid": "mqtt:topic:mosquitto:system:cpuload"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "System_CPU_LOAD"
+    }
+  },
+  "System_CPU_TEMP -> exec:command:getcputemperature:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getcputemperature",
+          "output"
+        ],
+        "uid": "exec:command:getcputemperature:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "System_CPU_TEMP"
+    }
+  },
+  "System_CPU_TEMP -> mqtt:topic:mosquitto:system:cputemp": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "system",
+          "cputemp"
+        ],
+        "uid": "mqtt:topic:mosquitto:system:cputemp"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "System_CPU_TEMP"
+    }
+  },
+  "System_CPU_UPTIME -> exec:command:getuptime:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getuptime",
+          "output"
+        ],
+        "uid": "exec:command:getuptime:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "System_CPU_UPTIME"
+    }
+  },
+  "System_TZ -> exec:command:gettz:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gettz",
+          "output"
+        ],
+        "uid": "exec:command:gettz:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "System_TZ"
+    }
+  },
+  "System_TZ_Set -> exec:command:settz:input": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "settz",
+          "input"
+        ],
+        "uid": "exec:command:settz:input"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "System_TZ_Set"
+    }
+  },
+  "System_Used_Space -> exec:command:getuseddiskspace:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "getuseddiskspace",
+          "output"
+        ],
+        "uid": "exec:command:getuseddiskspace:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "System_Used_Space"
+    }
+  },
+  "System_Used_Space -> mqtt:topic:mosquitto:system:space": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "system",
+          "space"
+        ],
+        "uid": "mqtt:topic:mosquitto:system:space"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "System_Used_Space"
+    }
+  },
+  "TempUnit -> exec:command:gettempunit:output": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "gettempunit",
+          "output"
+        ],
+        "uid": "exec:command:gettempunit:output"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "TempUnit"
+    }
+  },
+  "TempUnit -> mqtt:topic:mosquitto:types:tempunit": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "mqtt",
+          "topic",
+          "mosquitto",
+          "types",
+          "tempunit"
+        ],
+        "uid": "mqtt:topic:mosquitto:types:tempunit"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:follow"
+        }
+      },
+      "itemName": "TempUnit"
+    }
+  },
+  "UpgradeCommand -> exec:command:upgrade:run": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "upgrade",
+          "run"
+        ],
+        "uid": "exec:command:upgrade:run"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "system:default"
+        }
+      },
+      "itemName": "UpgradeCommand"
+    }
+  },
+  "Pin12 -> exec:command:setpin12:input": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "setpin12",
+          "input"
+        ],
+        "uid": "exec:command:setpin12:input"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "transform:NASHORNJS",
+          "commandFromItemScript": "|(input == 'ON') ? '1' : '0'"
+        }
+      },
+      "itemName": "Pin12"
+    }
+  },
+  "Pin16 -> exec:command:setpin16:input": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "setpin16",
+          "input"
+        ],
+        "uid": "exec:command:setpin16:input"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "transform:NASHORNJS",
+          "commandFromItemScript": "|(input == 'ON') ? '1' : '0'"
+        }
+      },
+      "itemName": "Pin16"
+    }
+  },
+  "Pin18 -> exec:command:setpin18:input": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "setpin18",
+          "input"
+        ],
+        "uid": "exec:command:setpin18:input"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "transform:NASHORNJS",
+          "commandFromItemScript": "|(input == 'ON') ? '1' : '0'"
+        }
+      },
+      "itemName": "Pin18"
+    }
+  },
+  "Pin23 -> exec:command:setpin23:input": {
+    "class": "org.openhab.core.thing.link.ItemChannelLink",
+    "value": {
+      "channelUID": {
+        "segments": [
+          "exec",
+          "command",
+          "setpin23",
+          "input"
+        ],
+        "uid": "exec:command:setpin23:input"
+      },
+      "configuration": {
+        "properties": {
+          "profile": "transform:NASHORNJS",
+          "commandFromItemScript": "|(input == 'ON') ? '1' : '0'"
+        }
+      },
+      "itemName": "Pin23"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+rule "Kick off initialization"
+when
+  System started
+then
+  var logName = "initialization.kickoff"
+  logInfo(logName, "OH is loaded, kicking off initialization, Initialized == " + Initialized.state)
+  if(Initialized.state == ON) logWarn(logName, "Already initialized!")
+  else if(Initialized.state == OFF) logWarn(logName, "Already initializing")
+  else {
+    // On the first start after a restore openHAB may run this rule before
+    // the Nashorn add-on has been installed.  The jsr223 file script below
+    // starts initialization as soon as Nashorn is available; this timer is
+    // only the fallback for a system where that script could not be loaded.
+    createTimer(now.plusSeconds(60), [ |
+      if(Initialized.state == NULL) {
+        logInfo(logName, "Commanding Initialization Rule to start")
+        StartInitialization.sendCommand(ON)
+      }
+    ])
+  }
+end
