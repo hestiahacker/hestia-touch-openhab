@@ -81,6 +81,11 @@ if getent passwd pi >/dev/null \
     install -m 0644 "$HERE/xorg-20-kiosk.conf" \
       /etc/X11/xorg.conf.d/20-kiosk.conf
   fi
+  # Ensure we have a stable device name for the LCD screen
+  install -m 0644 "$HERE/99-framebuffer-lcd.rules" /etc/udev/rules.d
+  udevadm control --reload-rules
+  udevadm trigger --subsystem-match=graphics
+  install -m 0755 "$HERE/set-kiosk-framebuffer" /usr/local/sbin/set-kiosk-framebuffer
   install -m 0644 "$HERE/kiosk.service" /etc/systemd/system/kiosk.service
   systemctl daemon-reload
   systemctl enable kiosk.service
