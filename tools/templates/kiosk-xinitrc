@@ -2,6 +2,9 @@
 # HestiaPi kiosk session.  Started by kiosk.service through startx.
 xset s off -dpms s noblank
 
+# hide the mouse cursor
+unclutter -idle 1 &
+
 # Window manager only; no panel, no desktop, no file manager.
 matchbox-window-manager -use_titlebar no -use_desktop_mode plain &
 
