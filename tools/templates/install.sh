@@ -83,9 +83,8 @@ if getent passwd pi >/dev/null \
   fi
   install -m 0644 "$HERE/kiosk.service" /etc/systemd/system/kiosk.service
   systemctl daemon-reload
-  systemctl enable kiosk.service >/dev/null 2>&1 || true
-  systemctl restart kiosk.service
-  echo "Installed and started kiosk.service."
+  systemctl enable kiosk.service
+  echo "Installed and enabled kiosk.service."
 else
   echo "Kiosk prerequisites not found; installed OneUI without starting it."
 fi
