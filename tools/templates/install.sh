@@ -88,11 +88,11 @@ if getent passwd pi >/dev/null \
   install -m 0755 "$HERE/set-kiosk-framebuffer" /usr/local/sbin/set-kiosk-framebuffer
   install -m 0755 "$HERE/wait-for-kiosk-mqtt" /usr/local/sbin/wait-for-kiosk-mqtt
   install -m 0755 -d "/usr/local/loading"
-  install -m 0644 -o pi "$HERE/openhabloader.html", "/usr/local/loading/openhabloader.html"
-  install -m 0644 "$HERE/openhabloader.blank.html", "/usr/local/loading/openhabloader.blank.html"
-  install -m 0644 "$HERE/logo.png", "/usr/local/loading/logo.png"
-  install -m 0755 "$HERE/render-loader", "/usr/local/loading/render-loader"
-  install -m 0755 "$HERE/wait-for-openhab", "/usr/local/loading/wait-for-openhab"
+  install -m 0644 -o pi "$HERE/openhabloader.html" "/usr/local/loading/openhabloader.html"
+  install -m 0644 "$HERE/openhabloader.blank.html" "/usr/local/loading/openhabloader.blank.html"
+  install -m 0644 "$HERE/logo.png" "/usr/local/loading/logo.png"
+  install -m 0755 "$HERE/render-loader" "/usr/local/loading/render-loader"
+  install -m 0755 "$HERE/wait-for-openhab" "/usr/local/loading/wait-for-openhab"
   install -m 0644 "$HERE/kiosk.service" /etc/systemd/system/kiosk.service
   systemctl daemon-reload
   systemctl enable kiosk.service
