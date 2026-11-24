@@ -900,6 +900,8 @@ def build_scripts() -> None:
     copy_file(TEMPLATES / "install.sh", SETUP / "install.sh", 0o755)
     copy_file(TEMPLATES / "kiosk.service", SETUP / "kiosk.service", 0o644)
     copy_file(TEMPLATES / "kiosk-xinitrc", SETUP / "kiosk-xinitrc", 0o755)
+    copy_file(TEMPLATES / "99-framebuffer-lcd.rules", SETUP / "99-framebuffer-lcd.rules", 0o644)
+    copy_file(TEMPLATES / "set-kiosk-framebuffer", SETUP / "set-kiosk-framebuffer", 0o755)
     copy_file(TEMPLATES / "mosquitto-oneui.conf",
               SETUP / "mosquitto-oneui.conf", 0o644)
     copy_file(TEMPLATES / "xorg-20-kiosk.conf",
