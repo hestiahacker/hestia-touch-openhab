@@ -1,0 +1,28 @@
+#!/bin/bash
+# Kiosk readiness gate.
+#
+# The OneUI gets all of its info-screen values from retained MQTT messages
+# under hestia/local/.  If Chromium connects before mosquitto's websocket
+# listener is up, or before openHAB has published those retained values, the
+# store can be left with its '--' defaults and the info screen won't be filled
+# in. Wait for both conditions before letting startx/Chromium start.
+
+# Wait until MQTT is listening on port 9001
+for _ in $(seq 1 90); do
+  if timeout 1 bash -c 'exec 3<>/dev/tcp/127.0.0.1/9001' 2>/dev/null; then
+    break
+  fi
+  sleep 1
+done
+
+# Wait until openHAB is actually publishing at least one retained topic
+for _ in $(seq 1 90); do
+  if timeout 2 mosquitto_sub -h 127.0.0.1 -t hestia/local/wanip \
+       --retained-only -C 1 -W 1 >/dev/null 2>&1; then
+    exit 0
+  fi
+  sleep 1
+done
+
+# Don't block the kiosk forever if the check never succeeds.
+exit 0

@@ -8,6 +8,44 @@ unclutter -idle 1 &
 # Window manager only; no panel, no desktop, no file manager.
 matchbox-window-manager -use_titlebar no -use_desktop_mode plain &
 
+# Populate the loading page with the current values (IP address, etc.)
+if ! /usr/local/loading/render-loader; then
+  echo "openhabloader: render failed; using the existing loader page" >&2
+fi
+chromium \
+  --kiosk \
+  --ozone-platform=x11 \
+  --disable-gpu \
+  --allow-file-access-from-files \
+  --no-first-run \
+  --no-default-browser-check \
+  --noerrdialogs \
+  --disable-infobars \
+  --disable-session-crashed-bubble \
+  --hide-crash-restore-bubble \
+  --disable-translate \
+  --disable-features=TranslateUI \
+  --disable-component-update \
+  --password-store=basic \
+  --user-data-dir="$HOME/.config/chromium-kiosk" \
+  "file:///usr/local/loading/openhabloader.html" &
+loader_pid=$!
+
+# Wait until openHAB is ready to accept commands and OneUI's MQTT data is
+# available, then replace the loader with the real UI.
+/usr/local/loading/wait-for-openhab
+
+kill -TERM "$loader_pid" 2>/dev/null || true
+for _ in 1 2 3 4 5 6 7 8 9 10; do
+  kill -0 "$loader_pid" 2>/dev/null || break
+  sleep 1
+done
+if kill -0 "$loader_pid" 2>/dev/null; then
+  kill -KILL "$loader_pid" 2>/dev/null || true
+fi
+wait "$loader_pid" 2>/dev/null || true
+sleep 1
+
 # The OneUI build uses relative asset paths, so it can be loaded directly
 # from the installed directory without running a web server.
 exec chromium \

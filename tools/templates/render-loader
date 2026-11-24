@@ -1,0 +1,33 @@
+#!/bin/bash
+# Render the boot loader page with this machine's network details.
+set -eu
+
+src=/usr/local/loading/openhabloader.blank.html
+dest=/usr/local/loading/openhabloader.html
+
+wlanip=$(/home/pi/scripts/getwlan0ip.sh 2>/dev/null || true)
+wlanmac=$(/home/pi/scripts/getwlan0mac.sh 2>/dev/null || true)
+[ -n "$wlanip" ] || wlanip="Not available"
+[ -n "$wlanmac" ] || wlanmac="Not available"
+
+hostapd_display=none
+if [ -f /home/pi/scripts/raspberry-pi-turnkey/status.json ] &&
+   grep -q hostapd /home/pi/scripts/raspberry-pi-turnkey/status.json 2>/dev/null; then
+  hostapd_display=block
+fi
+
+# Read in the blank version and create the populated one that will be displayed
+python3 - "$src" "$dest" "$wlanip" "$wlanmac" "$hostapd_display" <<'PY'
+import pathlib
+import sys
+
+src, dest, wlanip, wlanmac, hostapd_display = sys.argv[1:]
+html = pathlib.Path(src).read_text()
+for placeholder, value in (
+    ("__WLANIP__", wlanip),
+    ("__WLANMAC__", wlanmac),
+    ("__HOSTAPD_DISPLAY__", hostapd_display),
+):
+    html = html.replace(placeholder, value)
+pathlib.Path(dest).write_text(html)
+PY

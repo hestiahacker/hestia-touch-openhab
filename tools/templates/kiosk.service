@@ -1,6 +1,9 @@
 [Unit]
 Description=HestiaPi kiosk (matchbox + Chromium)
 After=systemd-user-sessions.service systemd-logind.service
+# We don't want to start this service after mosquitto or openhab, as we want
+# this to show the loading screen early in the boot process, before those
+# services are started.
 Conflicts=getty@tty1.service
 
 [Service]
@@ -13,7 +16,8 @@ StandardError=journal
 Environment=XDG_SESSION_TYPE=x11
 # Make sure the xorg config points to the correct device...
 ExecStartPre=+/usr/local/sbin/set-kiosk-framebuffer
-# ...before starting X
+# The loader waits for openHAB and the retained MQTT values itself, so
+# we don't want to block X from starting here.
 ExecStart=/usr/bin/startx /usr/local/oneui/kiosk-xinitrc -- :0 vt1
 Restart=always
 RestartSec=2

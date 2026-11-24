@@ -95,14 +95,14 @@ do
   fi
   # Show IP and MAC
   cp /home/pi/scripts/openhabloader.blank.html /home/pi/scripts/openhabloader.html
-  sed -i -e "s/wlanip/$wlanip/g" /home/pi/scripts/openhabloader.html
-  sed -i -e "s/wlanmac/$wlanmac/g" /home/pi/scripts/openhabloader.html
+  sed -i -e "s/__WLANIP__/$wlanip/g" /home/pi/scripts/openhabloader.html
+  sed -i -e "s/__WLANMAC__/$wlanmac/g" /home/pi/scripts/openhabloader.html
   # Show HESTIAPI WiFi network instructions on loading screen
   if grep -q "hostapd" /home/pi/scripts/raspberry-pi-turnkey/status.json
   then
-      sed -i -e "s/none/block/g" /home/pi/scripts/openhabloader.html
+      sed -i -e "s/__HOSTAPD_DISPLAY__/block/g" /home/pi/scripts/openhabloader.html
   else
-      sed -i -e "s/block/none/g" /home/pi/scripts/openhabloader.html
+      sed -i -e "s/__HOSTAPD_DISPLAY__/none/g" /home/pi/scripts/openhabloader.html
   fi
   # Clean up previously running apps, gracefully at first then harshly
   killall -TERM kweb 2>/dev/null;

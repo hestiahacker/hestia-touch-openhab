@@ -1,0 +1,45 @@
+#!/bin/bash
+# Hold the loader screen until openHAB has finished initializing and until
+# the retained MQTT values that OneUI reads are present on the broker.
+#
+# HestiaPi's initialization rule sets the "Initialized" item to ON only after
+# rules and commands are loaded.  The item has no persistence group, so it
+# starts as NULL on every boot and cannot be falsely restored from disk.
+set -u
+
+log() { echo "openhabloader: $*"; }
+
+deadline=$((SECONDS + 300))
+consecutive=0
+
+while [ "$SECONDS" -lt "$deadline" ]; do
+  state=$(curl -fsS --max-time 2 \
+    http://localhost:8080/rest/items/Initialized 2>/dev/null |
+    python3 -c 'import json,sys; print(json.load(sys.stdin).get("state", ""))' 2>/dev/null || true)
+
+  if [ "$state" = "ON" ]; then
+    consecutive=$((consecutive + 1))
+    if [ "$consecutive" -ge 2 ]; then
+      log "openHAB is initialized (Initialized=ON)"
+      break
+    fi
+  else
+    consecutive=0
+  fi
+  sleep 2
+done
+
+if [ "$consecutive" -lt 2 ]; then
+  log "timed out waiting for Initialized=ON; starting OneUI anyway"
+fi
+
+# OneUI fills its info screen from retained hestia/local/* topics.  Waiting
+# for those here keeps it from coming up with stale or blank values.
+if [ -x /usr/local/sbin/wait-for-kiosk-mqtt ]; then
+  log "waiting for retained OneUI MQTT values"
+  /usr/local/sbin/wait-for-kiosk-mqtt || true
+else
+  log "/usr/local/sbin/wait-for-kiosk-mqtt is missing; skipping MQTT check"
+fi
+
+log "loader complete; switching to OneUI"
