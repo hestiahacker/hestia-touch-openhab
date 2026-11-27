@@ -18,7 +18,10 @@ Environment=XDG_SESSION_TYPE=x11
 ExecStartPre=+/usr/local/sbin/set-kiosk-framebuffer
 # The loader waits for openHAB and the retained MQTT values itself, so
 # we don't want to block X from starting here.
-ExecStart=/usr/bin/startx /usr/local/oneui/kiosk-xinitrc -- :0 vt1
+ExecStart=/usr/bin/startx /usr/local/oneui/kiosk-xinitrc -- :0 vt1 -nocursor
+# This LCD keeps the last frame in its own memory after X exits or the board
+# powers off.  Wipe the framebuffer to black once all X clients are gone.
+ExecStopPost=-+/bin/sh -c 'stride=$$(cat /sys/class/graphics/fb-lcd/stride); rows=$$(cut -d, -f2 /sys/class/graphics/fb-lcd/virtual_size); [ -n "$$stride" ] && [ -n "$$rows" ] && exec dd if=/dev/zero of=/dev/fb-lcd bs="$$stride" count="$$rows" status=none'
 Restart=always
 RestartSec=2
 TimeoutStopSec=10
